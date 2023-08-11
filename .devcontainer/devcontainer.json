@@ -4,7 +4,8 @@
         "vscode": {
             "extensions": [
                 "GitHub.vscode-pull-request-github",
-                "mhutchie.git-graph"
+                "mhutchie.git-graph",
+                "ritwickdey.LiveServer"
             ]
         }
     }
