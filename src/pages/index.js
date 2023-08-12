@@ -27,33 +27,42 @@ const IndexPage = () => {
   return (
     <Layout disablePaddingBottom>
       {/* Hero Container */}
-      <Hero
+      {/* <Hero
         maxWidth={'500px'}
         image={'/banner1.png'}
         title={'Essentials for a cold winter'}
         subtitle={'Discover Autumn Winter 2021'}
         ctaText={'shop now'}
         ctaAction={goToShop}
+      /> */}
+      <Hero
+        maxWidth={'500px'}
+        // image={'/banner1.png'}
+        image={'/santeligio_2023.jpg'}
+        title={'Compagnia di Sant\'Eligio'}
+        subtitle={'Una lunga storia che ci piace ricordare'}
+        ctaText={'Approfondisci'}
+        ctaAction={goToShop}
       />
 
       {/* Message Container */}
       <div className={styles.messageContainer}>
-        <p>
+        {/* <p>
           This is a demonstration of the Sydney theme for verse by{' '}
           <span className={styles.gold}>matter design.</span>
         </p>
         <p>
           wear by <span className={styles.gold}>sunspel</span> and{' '}
           <span className={styles.gold}>scotch&soda</span>
-        </p>
+        </p> */}
       </div>
 
       {/* Collection Container */}
       <div className={styles.collectionContainer}>
-        <Container size={'large'}>
+        {/* <Container size={'large'}>
           <Title name={'New Collection'} />
           <ProductCollectionGrid />
-        </Container>
+        </Container> */}
       </div>
 
       {/* New Arrivals */}
@@ -72,7 +81,7 @@ const IndexPage = () => {
 
       {/* Highlight  */}
       <div className={styles.highlightContainer}>
-        <Container size={'large'} fullMobile>
+        {/* <Container size={'large'} fullMobile>
           <Highlight
             image={'/highlight.png'}
             altImage={'highlight image'}
@@ -83,7 +92,7 @@ const IndexPage = () => {
             textLink={'shop now'}
             link={'/shop'}
           />
-        </Container>
+        </Container> */}
       </div>
 
       {/* Promotion */}

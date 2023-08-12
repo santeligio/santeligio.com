@@ -4,6 +4,7 @@
         "vscode": {
             "extensions": [
                 "GitHub.vscode-pull-request-github",
+                "juggernautjp.less-toml",
                 "mhutchie.git-graph",
                 "ritwickdey.LiveServer"
             ]
