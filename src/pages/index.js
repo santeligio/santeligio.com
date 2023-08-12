@@ -27,12 +27,22 @@ const IndexPage = () => {
   return (
     <Layout disablePaddingBottom>
       {/* Hero Container */}
-      <Hero
+      {/* <Hero
         maxWidth={'500px'}
         image={'/banner1.png'}
         title={'Essentials for a cold winter'}
         subtitle={'Discover Autumn Winter 2021'}
         ctaText={'shop now'}
+        ctaAction={goToShop}
+      /> */}
+
+      <Hero
+        maxWidth={'500px'}
+        // image={'/banner1.png'}
+        image={'/santeligio_2023.jpg'}
+        title={'Compagnia di Sant\'Eligio'}
+        subtitle={'Una lunga storia che ci piace ricordare'}
+        ctaText={'Approfondisci'}
         ctaAction={goToShop}
       />
 
