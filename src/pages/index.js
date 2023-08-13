@@ -38,7 +38,7 @@ const IndexPage = () => {
       <Hero
         maxWidth={'500px'}
         // image={'/banner1.png'}
-        image={'/santeligio_2023.jpg'}
+        image={'/santeligio_1900.jpg'}
         title={'Compagnia di Sant\'Eligio'}
         subtitle={'Una lunga storia che ci piace ricordare'}
         ctaText={'Approfondisci'}
