@@ -7,7 +7,7 @@ import * as styles from './AttributeGrid.module.css';
 const AttributeGrid = (props) => {
   return (
     <div className={styles.root}>
-      <Attribute
+      {/* <Attribute
         icon={'delivery'}
         title={'free delivery worldwide'}
         subtitle={'Click to learn more'}
@@ -21,7 +21,7 @@ const AttributeGrid = (props) => {
         icon={'creditcard'}
         title={'secured payment'}
         subtitle={'Shop safely'}
-      />
+      /> */}
     </div>
   );
 };

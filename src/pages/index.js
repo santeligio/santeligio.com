@@ -37,36 +37,35 @@ const IndexPage = () => {
       /> */}
       <Hero
         maxWidth={'500px'}
-        // image={'/banner1.png'}
-        image={'/santeligio_2023.jpg'}
+        image={'/santeligio_1900.jpg'}
         title={'Compagnia di Sant\'Eligio'}
         subtitle={'Una lunga storia che ci piace ricordare'}
         ctaText={'Approfondisci'}
-        ctaAction={goToShop}
+        // ctaAction={goToShop}
       />
 
       {/* Message Container */}
-      <div className={styles.messageContainer}>
-        {/* <p>
+      {/* <div className={styles.messageContainer}>
+        <p>
           This is a demonstration of the Sydney theme for verse by{' '}
           <span className={styles.gold}>matter design.</span>
         </p>
         <p>
           wear by <span className={styles.gold}>sunspel</span> and{' '}
           <span className={styles.gold}>scotch&soda</span>
-        </p> */}
-      </div>
+        </p>
+      </div> */}
 
       {/* Collection Container */}
-      <div className={styles.collectionContainer}>
-        {/* <Container size={'large'}>
+      {/* <div className={styles.collectionContainer}>
+        <Container size={'large'}>
           <Title name={'New Collection'} />
           <ProductCollectionGrid />
-        </Container> */}
-      </div>
+        </Container>
+      </div> */}
 
       {/* New Arrivals */}
-      <div className={styles.newArrivalsContainer}>
+      {/* <div className={styles.newArrivalsContainer}>
         <Container>
           <Title name={'New Arrivals'} link={'/shop'} textLink={'view all'} />
           <ProductCardGrid
@@ -77,11 +76,11 @@ const IndexPage = () => {
             data={newArrivals}
           />
         </Container>
-      </div>
+      </div> */}
 
       {/* Highlight  */}
-      <div className={styles.highlightContainer}>
-        {/* <Container size={'large'} fullMobile>
+      {/* <div className={styles.highlightContainer}>
+        <Container size={'large'} fullMobile>
           <Highlight
             image={'/highlight.png'}
             altImage={'highlight image'}
@@ -92,38 +91,44 @@ const IndexPage = () => {
             textLink={'shop now'}
             link={'/shop'}
           />
-        </Container> */}
-      </div>
+        </Container>
+      </div> */}
 
       {/* Promotion */}
-      <div className={styles.promotionContainer}>
+      {/* <div className={styles.promotionContainer}>
         <Hero image={'/banner2.png'} title={`-50% off \n All Essentials`} />
         <div className={styles.linkContainers}>
           <Link to={'/shop'}>WOMAN</Link>
           <Link to={'/shop'}>MAN</Link>
         </div>
-      </div>
+      </div> */}
 
       {/* Quote */}
-      <Quote
+      {/* <Quote
         bgColor={'var(--standard-light-grey)'}
         title={'about Sydney'}
         quote={
           '“We believe in two things: the pursuit of quality in everything we do, and looking after one another. Everything else should take care of itself.”'
+        } */}
+        <Quote
+        bgColor={'var(--standard-light-grey)'}
+        title={'about SantEligio'}
+        quote={
+          '“Vogliamo proseguire una tradizione che si ripete da duecento anni.”'
         }
       />
 
       {/* Blog Grid */}
-      <div className={styles.blogsContainer}>
+      {/* <div className={styles.blogsContainer}>
         <Container size={'large'}>
           <Title name={'Journal'} subtitle={'Notes on life and style'} />
           <BlogPreviewGrid data={blogData} />
         </Container>
-      </div>
+      </div> */}
 
       {/* Promotion */}
       <div className={styles.sustainableContainer}>
-        <Hero
+        {/* <Hero
           image={'/banner3.png'}
           title={'We are Sustainable'}
           subtitle={
@@ -132,11 +137,21 @@ const IndexPage = () => {
           ctaText={'read more'}
           maxWidth={'660px'}
           ctaStyle={styles.ctaCustomButton}
+        /> */}
+        <Hero
+          image={'/santeligio_2023.jpg'}
+          title={'I soci del 2023'}
+          // subtitle={
+          //   'I discendenti della Compagnia di Sant.\'Eligio'
+          // }
+          ctaText={'dettagli'}
+          maxWidth={'660px'}
+          ctaStyle={styles.ctaCustomButton}
         />
       </div>
 
       {/* Social Media */}
-      <div className={styles.socialContainer}>
+      {/* <div className={styles.socialContainer}>
         <Title
           name={'Styled by You'}
           subtitle={'Tag @sydney to be featured.'}
@@ -147,7 +162,7 @@ const IndexPage = () => {
           <img src={`/social/socialMedia3.png`} alt={'social media 3'} />
           <img src={`/social/socialMedia4.png`} alt={'social media 4'} />
         </div>
-      </div>
+      </div> */}
       <AttributeGrid />
     </Layout>
   );
