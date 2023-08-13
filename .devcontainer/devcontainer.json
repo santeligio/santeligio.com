@@ -3,6 +3,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
+                "george-alisson.html-preview-vscode",
                 "GitHub.vscode-pull-request-github",
                 "juggernautjp.less-toml",
                 "mhutchie.git-graph",
