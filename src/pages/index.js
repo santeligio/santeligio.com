@@ -67,7 +67,7 @@ const IndexPage = () => {
 
       {/* New Arrivals */}
       <div className={styles.newArrivalsContainer}>
-        <Container>
+        {/* <Container>
           <Title name={'New Arrivals'} link={'/shop'} textLink={'view all'} />
           <ProductCardGrid
             spacing={true}
@@ -76,7 +76,7 @@ const IndexPage = () => {
             columns={3}
             data={newArrivals}
           />
-        </Container>
+        </Container> */}
       </div>
 
       {/* Highlight  */}
