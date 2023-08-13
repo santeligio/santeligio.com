@@ -128,12 +128,22 @@ const IndexPage = () => {
 
       {/* Promotion */}
       <div className={styles.sustainableContainer}>
-        <Hero
+        {/* <Hero
           image={'/banner3.png'}
           title={'We are Sustainable'}
           subtitle={
             'From caring for our land to supporting our people, discover the steps we’re taking to do more for the world around us.'
           }
+          ctaText={'read more'}
+          maxWidth={'660px'}
+          ctaStyle={styles.ctaCustomButton}
+        /> */}
+        <Hero
+          image={'/santeligio_2023.jpg'}
+          title={'I soci del 2023'}
+          // subtitle={
+          //   'I discendenti della Compagnia di Sant.\'Eligio'
+          // }
           ctaText={'read more'}
           maxWidth={'660px'}
           ctaStyle={styles.ctaCustomButton}
