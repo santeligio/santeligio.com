@@ -45,28 +45,28 @@ const IndexPage = () => {
       />
 
       {/* Message Container */}
-      <div className={styles.messageContainer}>
-        {/* <p>
+      {/* <div className={styles.messageContainer}>
+        <p>
           This is a demonstration of the Sydney theme for verse by{' '}
           <span className={styles.gold}>matter design.</span>
         </p>
         <p>
           wear by <span className={styles.gold}>sunspel</span> and{' '}
           <span className={styles.gold}>scotch&soda</span>
-        </p> */}
-      </div>
+        </p>
+      </div> */}
 
       {/* Collection Container */}
-      <div className={styles.collectionContainer}>
-        {/* <Container size={'large'}>
+      {/* <div className={styles.collectionContainer}>
+        <Container size={'large'}>
           <Title name={'New Collection'} />
           <ProductCollectionGrid />
-        </Container> */}
-      </div>
+        </Container>
+      </div> */}
 
       {/* New Arrivals */}
-      <div className={styles.newArrivalsContainer}>
-        {/* <Container>
+      {/* <div className={styles.newArrivalsContainer}>
+        <Container>
           <Title name={'New Arrivals'} link={'/shop'} textLink={'view all'} />
           <ProductCardGrid
             spacing={true}
@@ -75,12 +75,12 @@ const IndexPage = () => {
             columns={3}
             data={newArrivals}
           />
-        </Container> */}
-      </div>
+        </Container>
+      </div> */}
 
       {/* Highlight  */}
-      <div className={styles.highlightContainer}>
-        {/* <Container size={'large'} fullMobile>
+      {/* <div className={styles.highlightContainer}>
+        <Container size={'large'} fullMobile>
           <Highlight
             image={'/highlight.png'}
             altImage={'highlight image'}
@@ -91,17 +91,17 @@ const IndexPage = () => {
             textLink={'shop now'}
             link={'/shop'}
           />
-        </Container> */}
-      </div>
+        </Container>
+      </div> */}
 
       {/* Promotion */}
-      <div className={styles.promotionContainer}>
-        {/* <Hero image={'/banner2.png'} title={`-50% off \n All Essentials`} />
+      {/* <div className={styles.promotionContainer}>
+        <Hero image={'/banner2.png'} title={`-50% off \n All Essentials`} />
         <div className={styles.linkContainers}>
           <Link to={'/shop'}>WOMAN</Link>
           <Link to={'/shop'}>MAN</Link>
-        </div> */}
-      </div>
+        </div>
+      </div> */}
 
       {/* Quote */}
       {/* <Quote
@@ -119,12 +119,12 @@ const IndexPage = () => {
       />
 
       {/* Blog Grid */}
-      <div className={styles.blogsContainer}>
-        {/* <Container size={'large'}>
+      {/* <div className={styles.blogsContainer}>
+        <Container size={'large'}>
           <Title name={'Journal'} subtitle={'Notes on life and style'} />
           <BlogPreviewGrid data={blogData} />
-        </Container> */}
-      </div>
+        </Container>
+      </div> */}
 
       {/* Promotion */}
       <div className={styles.sustainableContainer}>
