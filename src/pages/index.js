@@ -37,7 +37,6 @@ const IndexPage = () => {
       /> */}
       <Hero
         maxWidth={'500px'}
-        // image={'/banner1.png'}
         image={'/santeligio_1900.jpg'}
         title={'Compagnia di Sant\'Eligio'}
         subtitle={'Una lunga storia che ci piace ricordare'}
@@ -105,11 +104,17 @@ const IndexPage = () => {
       </div>
 
       {/* Quote */}
-      <Quote
+      {/* <Quote
         bgColor={'var(--standard-light-grey)'}
         title={'about Sydney'}
         quote={
           '“We believe in two things: the pursuit of quality in everything we do, and looking after one another. Everything else should take care of itself.”'
+        } */}
+        <Quote
+        bgColor={'var(--standard-light-grey)'}
+        title={'about SantEligio'}
+        quote={
+          '“Vogliamo proseguire una tradizione che si ripete da duecento anni.”'
         }
       />
 
