@@ -41,7 +41,7 @@ const IndexPage = () => {
         title={'Compagnia di Sant\'Eligio'}
         subtitle={'Una lunga storia che ci piace ricordare'}
         ctaText={'Approfondisci'}
-        ctaAction={goToShop}
+        // ctaAction={goToShop}
       />
 
       {/* Message Container */}
