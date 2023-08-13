@@ -144,7 +144,7 @@ const IndexPage = () => {
           // subtitle={
           //   'I discendenti della Compagnia di Sant.\'Eligio'
           // }
-          ctaText={'read more'}
+          ctaText={'dettagli'}
           maxWidth={'660px'}
           ctaStyle={styles.ctaCustomButton}
         />
