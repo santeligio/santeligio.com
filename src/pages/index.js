@@ -151,7 +151,7 @@ const IndexPage = () => {
       </div>
 
       {/* Social Media */}
-      <div className={styles.socialContainer}>
+      {/* <div className={styles.socialContainer}>
         <Title
           name={'Styled by You'}
           subtitle={'Tag @sydney to be featured.'}
@@ -162,7 +162,7 @@ const IndexPage = () => {
           <img src={`/social/socialMedia3.png`} alt={'social media 3'} />
           <img src={`/social/socialMedia4.png`} alt={'social media 4'} />
         </div>
-      </div>
+      </div> */}
       <AttributeGrid />
     </Layout>
   );
