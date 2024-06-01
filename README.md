@@ -1,4 +1,4 @@
-# santeligio.online
+# santeligio.com
 
 Sources for site <https://santeligio.com/>.
 
