@@ -1,12 +1,12 @@
 # santeligio.online
 
-Sources for site <https://santeligio.online>.
+Sources for site <https://santeligio.com/>.
 
 Based on template [gatsby-ecommerce-theme](https://github.com/netlify-templates/gatsby-ecommerce-theme).
 
 ## Copyright and license
 
-Copyright (C) 2023, [Compagnia di Sant'Eligio](https://github.com/santeligio), all rights reserved.
+Copyright (C) 2023-2024, [Compagnia di Sant'Eligio](https://github.com/santeligio), all rights reserved.
 
 ### Source code license
 
