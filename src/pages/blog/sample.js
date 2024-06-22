@@ -13,7 +13,7 @@ const SamplePage = (props) => {
           <div className={styles.blogContainer}>
             <Blog
               category={'storia'}
-              title={'La vecchia bandiera di Sant\'Eligio'}
+              title={"La vecchia bandiera di Sant'Eligio"}
               // image={'/blogFeatured.png'}
               image={'/santeligio/wa-2024-06-10-133426-1.jpeg'}
               alt={''}
@@ -21,30 +21,36 @@ const SamplePage = (props) => {
               <div className={styles.content}>
                 <p className={styles.excerpt}>
                   Ritrovata per caso in una vecchia scatola di vini, la prima
-                  Bandiera è un cimelio che la Compagnia di Sant'Eligio
-                  intende preservare a ricordo della tradizione.
+                  Bandiera è un cimelio che la Compagnia di Sant'Eligio intende
+                  preservare a ricordo della tradizione.
                 </p>
                 <p className={styles.blogParagraph}>
-                  In una giornata di novembre 2023 Adriana e Giorgio
-                  ritrovano presso un ripostiglio della Pro Loco di Vernante
-                  una vecchia scatola di cartone che in origine conteneva delle bottiglie di vino.  
+                  In una giornata di novembre 2023 Adriana e Giorgio ritrovano
+                  presso un ripostiglio della Pro Loco di Vernante una vecchia
+                  scatola di cartone che in origine conteneva delle bottiglie di
+                  vino.
                 </p>
                 <div className={styles.imagesContainer}>
                   <div className={styles.imageContainer}>
-                    <img src={'/santeligio/20231125-142120.jpg'} alt={'sample1'} />
+                    <img
+                      src={'/santeligio/20231125-142120.jpg'}
+                      alt={'sample1'}
+                    />
                   </div>
                 </div>
                 <p className={styles.blogParagraph}>
-                  Aprendo un lembo della scatola però si rivela un indizio del vero contenuto.  
+                  Aprendo un lembo della scatola però si rivela un indizio del
+                  vero contenuto.
                 </p>
                 <div className={styles.imagesContainer}>
                   <div className={styles.imageContainer}>
-                    <img src={'/santeligio/20231125-142205.jpg'} alt={'sample1'} />
+                    <img
+                      src={'/santeligio/20231125-142205.jpg'}
+                      alt={'sample1'}
+                    />
                   </div>
                 </div>
-                <p className={styles.blogParagraph}>
-                  Continua...  
-                </p>
+                <p className={styles.blogParagraph}>Continua...</p>
                 {/* <p className={styles.blogParagraph}>
                   Delaware limited liability company (The Sydney) collects
                   personal information that you voluntarily provide when

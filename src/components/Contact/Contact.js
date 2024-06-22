@@ -45,9 +45,11 @@ const Contact = (props) => {
       <div className={styles.section}>
         <h4>Email</h4>
         <p>
-          You can email our Customer Service team
-          at <b><a href="mailto:info@santeligio.com">info@santeligio.com</a></b> or
-          via the contact form below:
+          You can email our Customer Service team at{' '}
+          <b>
+            <a href="mailto:info@santeligio.com">info@santeligio.com</a>
+          </b>{' '}
+          or via the contact form below:
         </p>
       </div>
 
