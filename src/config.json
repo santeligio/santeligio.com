@@ -3,17 +3,13 @@
     { "value": "EUR", "label": "Italia (EUR €)" },
     { "value": "EUR", "label": "France (EUR €)" },
     { "value": "EUR", "label": "Germany (EUR €)" },
-    { "value": "USD", "label": "United States (US $)" },
-    { "value": "AUS", "label": "Australia (AUS $)" },
-    { "value": "CAD", "label": "Canada (CAD $)" },
-    { "value": "HKD", "label": "Hong Kong (HKD $)" }
+    { "value": "USD", "label": "United States (US $)" }
   ],
   "languageList": [
     { "value": "italian", "label": "Italiano" },
     { "value": "english", "label": "English" },
     { "value": "french", "label": "Français" },
-    { "value": "german", "label": "Deutsch" },
-    { "value": "mandarin", "label": "普通话" }
+    { "value": "german", "label": "Deutsch" }
   ],
   "social": {
     "facebook": "https://www.facebook.com/MatterDesign/",
@@ -22,20 +18,20 @@
     "youtube": "https://www.youtube.com/channel/UCEOu94Haa--QmltsSawflXg"
   },
   "paymentOptions": {
-    "visa": true,
-    "mastercard": true,
-    "amex": true
+    "visa": false,
+    "mastercard": false,
+    "amex": false
   },
   "footerLinks": [
     {
       "subTitle": "Info",
       "links": [
         {
-          "text": "About Us",
+          "text": "Chi siamo",
           "link": "/about"
         },
         {
-          "text": "Journal",
+          "text": "Blog",
           "link": "/blog"
         },
         {
@@ -45,32 +41,27 @@
       ]
     },
     {
-      "subTitle": "Support",
+      "subTitle": "Supporto",
       "links": [
         {
           "text": "FAQ",
           "link": "/faq"
         },
         {
-          "text": "Contact Us",
+          "text": "Contatti",
           "link": "/support#contact"
-        },
-        {
-          "text": "How to use this theme",
-          "link": "/how-to-use"
         }
       ]
     }
   ],
   "headerLinks": [
-
     {
-      "menuLabel": "journal",
+      "menuLabel": "Blog",
       "menuLink": "/blog",
       "category": null
     },
     {
-      "menuLabel": "About",
+      "menuLabel": "Chi siamo",
       "menuLink": "/about",
       "category": null
     }
