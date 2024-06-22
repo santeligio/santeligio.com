@@ -5,12 +5,12 @@ const Policy = (props) => {
   return (
     <div className={styles.root}>
       <div className={styles.section}>
-        <h3>1. Lorem Ipsum</h3>
+        <h3>1. Background</h3>
         <p>
-          Delaware limited liability company (The Sydney) collects personal
+          La Compagnia di Sant'Eligio (<a href="https://santeligio.com">santeligio.com</a>) collects personal
           information that you voluntarily provide when applying or registering
-          for an account with The Upside or making a purchase on The Upside
-          website; www.theupside.com (the Website).
+          for an account with <a href="https://santeligio.com">santeligio.com</a> or making a purchase on The
+          website; www.santeligio.com (the Website).
         </p>
         <p>
           This Privacy Policy (Privacy Policy) outlines how your information is
@@ -27,12 +27,12 @@ const Policy = (props) => {
       </div>
 
       <div className={styles.section}>
-        <h3>2. Lorem Ipsum</h3>
+        <h3>2. Inclusions</h3>
         <p>
           Our Services, including but not limited to the registration of an
           account with us or placing of an order, is not intended to be used by
           children under the age of 13. When a visitor indicates an age under
-          13, the registration process for The Upside website cannot be
+          13, the registration process for <a href="https://santeligio.com">santeligio.com</a> website cannot be
           completed, and no personally identifying information is collected in
           conjunction with that attempted submission except that we retain
           e-mail addresses of such persons (and record of access attempts) for
@@ -48,13 +48,13 @@ const Policy = (props) => {
           into a legally binding agreement and to abide by this Privacy Policy.{' '}
         </p>
         <p>
-          The Upside collects, uses and discloses information regarding users
+          <a href="https://santeligio.com">santeligio.com</a> collects, uses and discloses information regarding users
           aged 13-18 in the same manner as it does for adults.{' '}
         </p>
       </div>
 
       <div className={styles.section}>
-        <h3>3. Lorem Ipsum</h3>
+        <h3>3. Limitations</h3>
         <p>
           You must only use our Services in accordance with this Privacy Policy
           and any applicable law or regulations. You agree to refrain from
@@ -70,9 +70,9 @@ const Policy = (props) => {
         <p>
           (c) pretend to be anyone, or any entity, you are not, you will not
           impersonate or misrepresent yourself as another person (including
-          celebrities), entity, a The Upside employee, or a civic or government
+          celebrities), entity, a <a href="https://santeligio.com">santeligio.com</a> employee, or a civic or government
           leader, or otherwise misrepresent your affiliation with a person or
-          entity. The Upside reserves the right to reject or block any user
+          entity. <a href="https://santeligio.com">santeligio.com</a> reserves the right to reject or block any user
           which could be deemed to be an impersonation or misrepresentation of
           your identity, or a misappropriation of another person's name or
           identity;{' '}
@@ -85,13 +85,13 @@ const Policy = (props) => {
         </p>
         <p>
           (e) use, distribute, reproduce or commercialize any content from the
-          Website or The Upside service except as permitted by this Policy, by
-          law, and with prior written agreement from The Upside;{' '}
+          Website or <a href="https://santeligio.com">santeligio.com</a> service except as permitted by this Policy, by
+          law, and with prior written agreement from <a href="https://santeligio.com">santeligio.com</a>;{' '}
         </p>
         <p>
           (f) transmit any unsolicited advertising, promotional material or
           other forms of solicitation in connection with your use of the Service
-          without the prior written agreement of The Upside;{' '}
+          without the prior written agreement of <a href="https://santeligio.com">santeligio.com</a>;{' '}
         </p>
         <p>
           (g) forge any TCP-IP packet header or any part of the header
