@@ -27,7 +27,7 @@ const Header = (prop) => {
   const [search, setSearch] = useState('');
 
   const searchRef = createRef();
-  const bannerMessage = 'Free shipping worldwide';
+  // const bannerMessage = 'Free shipping worldwide';
   const searchSuggestions = [
     'Oversize sweaters',
     'Lama Pajamas',
@@ -119,7 +119,7 @@ const Header = (prop) => {
           </div>
           <Brand />
           <div className={styles.actionContainers}>
-            <button
+            {/* <button
               aria-label="Search"
               className={`${styles.iconButton} ${styles.iconContainer}`}
               onClick={() => {
@@ -127,14 +127,14 @@ const Header = (prop) => {
               }}
             >
               <Icon symbol={'search'}></Icon>
-            </button>
-            <Link
+            </button> */}
+            {/* <Link
               aria-label="Favorites"
               href="/account/favorites"
               className={`${styles.iconContainer} ${styles.hideOnMobile}`}
             >
               <Icon symbol={'heart'}></Icon>
-            </Link>
+            </Link> */}
             <Link
               aria-label="Orders"
               href={isAuth() ? '/login' : '/account/orders/'}
@@ -142,7 +142,7 @@ const Header = (prop) => {
             >
               <Icon symbol={'user'}></Icon>
             </Link>
-            <button
+            {/* <button
               aria-label="Cart"
               className={`${styles.iconButton} ${styles.iconContainer} ${styles.bagIconContainer}`}
               onClick={() => {
@@ -154,7 +154,7 @@ const Header = (prop) => {
               <div className={styles.bagNotification}>
                 <span>1</span>
               </div>
-            </button>
+            </button> */}
             <div className={styles.notificationContainer}>
               <AddNotification openCart={() => setShowMiniCart(true)} />
             </div>

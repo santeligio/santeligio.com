@@ -12,12 +12,13 @@ const FaqPage = (props) => {
         <Banner
           maxWidth={'650px'}
           name={`Frequently Asked Questions`}
-          bgImage={'/faqCover.png'}
+          // bgImage={'/faqCover.png'}
+          bgImage={'/santeligio/santeligio_2023.jpg'}
           color={'var(--standard-white)'}
           height={'350px'}
         />
         <Container>
-          <div className={styles.section}>
+          {/* <div className={styles.section}>
             <span>Your Orders</span>
             <div className={styles.subSection}>
               <h3>Deliveries</h3>
@@ -54,9 +55,9 @@ const FaqPage = (props) => {
                 days just in case.
               </p>
             </div>
-          </div>
+          </div> */}
 
-          <div className={styles.section}>
+          {/* <div className={styles.section}>
             <span>Payment</span>
             <div className={styles.subSection}>
               <h3>Shipping Rates</h3>
@@ -109,7 +110,7 @@ const FaqPage = (props) => {
                 inconvenience to you.
               </p>
             </div>
-          </div>
+          </div> */}
         </Container>
       </div>
     </Layout>

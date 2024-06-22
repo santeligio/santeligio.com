@@ -2,23 +2,23 @@ import React, { useRef } from 'react';
 
 import Container from '../components/Container';
 import Hero from '../components/Hero';
-import ThemeLink from '../components/ThemeLink';
+// import ThemeLink from '../components/ThemeLink';
 import Layout from '../components/Layout/Layout';
 
 import * as styles from './about.module.css';
 const AboutPage = (props) => {
   let historyRef = useRef();
-  let valuesRef = useRef();
-  let sustainabilityRef = useRef();
+  // let valuesRef = useRef();
+  // let sustainabilityRef = useRef();
 
-  const handleScroll = (elementReference) => {
-    if (elementReference) {
-      window.scrollTo({
-        behavior: 'smooth',
-        top: elementReference.current.offsetTop - 280,
-      });
-    }
-  };
+  // const handleScroll = (elementReference) => {
+  //   if (elementReference) {
+  //     window.scrollTo({
+  //       behavior: 'smooth',
+  //       top: elementReference.current.offsetTop - 280,
+  //     });
+  //   }
+  // };
 
   return (
     <Layout disablePaddingBottom>
@@ -26,11 +26,11 @@ const AboutPage = (props) => {
         {/* Hero Container */}
         <Hero
           maxWidth={'900px'}
-          image={'/about.png'}
-          title={`Sydney \n A British brand since 1860`}
+          image={'/santeligio_2023.jpg'}
+          title={`Compagnia di Sant'Eligio \n Chi siamo`}
         />
 
-        <div className={styles.navContainer}>
+        {/* <div className={styles.navContainer}>
           <ThemeLink onClick={() => handleScroll(historyRef)} to={'#history'}>
             History
           </ThemeLink>
@@ -43,33 +43,29 @@ const AboutPage = (props) => {
           >
             Sustainability
           </ThemeLink>
-        </div>
+        </div> */}
 
         <Container size={'large'} spacing={'min'}>
           <div className={styles.detailContainer} ref={historyRef}>
             <p>
-              Founded in 1860, Sydney is an innovative British brand with a
-              contemporary edge. We make timeless everyday luxury clothing.
-            </p>
-            <br />
-            <br />
-            <p>
-              We created some of the world's first T-shirts and spent decades
-              perfecting the feel of the cotton. Today we are the only brand
-              that makes T-shirts in its own factory in the UK. And we do this
-              in the same factory we have occupied since 1937.
+              Fondata nel 1858 da una ventina di Soci che praticavano la professione del Carrettiere (in dialetto Vernantese, "Cartouné").
+
+              La professione del "Cartouné" - che ai giorni nostri potremmo paragonare a quella del camionista,
+              rappresentava un mestiere molto redditizio nella Valle Vermenagna, da sempre via di collegamento tra la Provincia di Cuneo e il mare.
+              
+              La Compagnia di Sant'Eligio e' costituita dai discendenti dei Soci Fondatori e si tramanda gelosamente per linea gerarchica al discendente maschio più giovane.
             </p>
           </div>
         </Container>
 
-        <div className={styles.imageContainer}>
+        {/* <div className={styles.imageContainer}>
           <img alt={'shirt brand'} src={'/about1.png'}></img>
-        </div>
+        </div> */}
 
         <Container size={'large'} spacing={'min'}>
           <div className={styles.content}>
-            <h3>Our Values</h3>
-            <div ref={valuesRef}>
+            {/* <h3>I nostri valori</h3> */}
+            {/* <div ref={valuesRef}>
               <p>
                 Sunspel produced some of the world's earliest T-shirts. In the
                 late 1800s the business made luxury tunics and undershirts from
@@ -88,9 +84,10 @@ const AboutPage = (props) => {
                 <li>Only natural materials</li>
               </ol>
               <img alt={'founder'} src={'/about2.png'}></img>
-            </div>
-            <h3>Sustainability</h3>
-            <div id={'#sustainability'} ref={sustainabilityRef}>
+            </div> */}
+
+            {/* <h3>Sustainability</h3> */}
+            {/* <div id={'#sustainability'} ref={sustainabilityRef}>
               <p>
                 Our founder, Thomas Hill, had both an eye for quality and a
                 desire to innovate. As well as using the finest fibres such as
@@ -113,13 +110,13 @@ const AboutPage = (props) => {
                 Sunspel Classic T-shirt is recognised as the finest in the
                 world.
               </p>
-            </div>
+            </div> */}
           </div>
         </Container>
 
-        <div className={styles.imageContainer}>
+        {/* <div className={styles.imageContainer}>
           <img alt={'shirt backwards'} src={'/about3.png'}></img>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

@@ -1,28 +1,33 @@
 import * as React from 'react';
 
 import AttributeGrid from '../components/AttributeGrid';
-import Container from '../components/Container';
+// import Container from '../components/Container';
 import Hero from '../components/Hero';
-import BlogPreviewGrid from '../components/BlogPreviewGrid';
-import Highlight from '../components/Highlight';
+// import BlogPreviewGrid from '../components/BlogPreviewGrid';
+// import Highlight from '../components/Highlight';
 import Layout from '../components/Layout/Layout';
-import ProductCollectionGrid from '../components/ProductCollectionGrid';
-import ProductCardGrid from '../components/ProductCardGrid';
+// import ProductCollectionGrid from '../components/ProductCollectionGrid';
+// import ProductCardGrid from '../components/ProductCardGrid';
 import Quote from '../components/Quote';
-import Title from '../components/Title';
+// import Title from '../components/Title';
 
-import { generateMockBlogData, generateMockProductData } from '../helpers/mock';
+// import { generateMockBlogData, generateMockProductData } from '../helpers/mock';
 
 import * as styles from './index.module.css';
-import { Link, navigate } from 'gatsby';
+// import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
 
 const IndexPage = () => {
-  const newArrivals = generateMockProductData(3, 'shirt');
-  const blogData = generateMockBlogData(3);
+  // const newArrivals = generateMockProductData(3, 'shirt');
+  // const blogData = generateMockBlogData(3);
 
-  const goToShop = () => {
-    navigate('/shop');
+  const goToAbout = () => {
+    navigate('/about');
   };
+
+  // const goToShop = () => {
+  //   navigate('/shop');
+  // };
 
   return (
     <Layout disablePaddingBottom>
@@ -37,11 +42,11 @@ const IndexPage = () => {
       /> */}
       <Hero
         maxWidth={'500px'}
-        image={'/santeligio_1900.jpg'}
+        image={'/santeligio/santeligio_1900.jpg'}
         title={'Compagnia di Sant\'Eligio'}
         subtitle={'Una lunga storia che ci piace ricordare'}
         ctaText={'Approfondisci'}
-        // ctaAction={goToShop}
+        ctaAction={goToAbout}
       />
 
       {/* Message Container */}
@@ -139,7 +144,7 @@ const IndexPage = () => {
           ctaStyle={styles.ctaCustomButton}
         /> */}
         <Hero
-          image={'/santeligio_2023.jpg'}
+          image={'/santeligio/santeligio_2023.jpg'}
           title={'I soci del 2023'}
           // subtitle={
           //   'I discendenti della Compagnia di Sant.\'Eligio'
@@ -147,8 +152,24 @@ const IndexPage = () => {
           ctaText={'dettagli'}
           maxWidth={'660px'}
           ctaStyle={styles.ctaCustomButton}
+          ctaAction={goToAbout}
         />
       </div>
+
+      {/* Quote 2 */}
+      {/* <Quote
+        bgColor={'var(--standard-light-grey)'}
+        title={'about Sydney'}
+        quote={
+          '“We believe in two things: the pursuit of quality in everything we do, and looking after one another. Everything else should take care of itself.”'
+        } */}
+        <Quote
+        bgColor={'var(--standard-light-grey)'}
+        title={'Prossimi Appuntamenti'}
+        quote={
+          'Appuntamento in piazza Mandoulera a Vernante domenica 7 luglio per la tradizionale "scaplada"!'
+        }
+      />
 
       {/* Social Media */}
       {/* <div className={styles.socialContainer}>

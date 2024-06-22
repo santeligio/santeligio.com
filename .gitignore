@@ -1,7 +1,10 @@
+# .gitignore
+
 node_modules
 .DS_Store
 .cache/
 public
+.*.swp
 
 # Local Netlify folder
 .netlify
