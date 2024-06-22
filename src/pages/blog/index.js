@@ -1,25 +1,26 @@
 import React from 'react';
 import { navigate } from 'gatsby';
 
-import BlogPreviewGrid from '../../components/BlogPreviewGrid';
-import Container from '../../components/Container';
+// import BlogPreviewGrid from '../../components/BlogPreviewGrid';
+// import Container from '../../components/Container';
 import Hero from '../../components/Hero';
 import Layout from '../../components/Layout/Layout';
 import ThemeLink from '../../components/ThemeLink';
 
-import { generateMockBlogData } from '../../helpers/mock';
+// import { generateMockBlogData } from '../../helpers/mock';
 import * as styles from './index.module.css';
 
 const BlogPage = (props) => {
-  const blogData = generateMockBlogData(6);
+  // const blogData = generateMockBlogData(6);
 
   return (
     <Layout disablePaddingBottom>
       <div className={styles.root}>
         <Hero
           maxWidth={'400px'}
-          image={'/blogCover.png'}
-          title={`The new standard of Closing`}
+          // image={'/blogCover.png'}
+          image={'/santeligio/wa-2024-06-10-133426-1.jpeg'}
+          title={`La vecchia bandiera della Compagnia`}
           ctaLink={'read story'}
           ctaTo={'/blog/sample'}
           header={'design'}
@@ -32,18 +33,18 @@ const BlogPage = (props) => {
           >
             All Posts
           </ThemeLink>
-          <ThemeLink
+          {/* <ThemeLink
             onClick={() => navigate('/blog/sample')}
             to={'/blog/sample'}
           >
             Design
-          </ThemeLink>
-          <ThemeLink
+          </ThemeLink> */}
+          {/* <ThemeLink
             onClick={() => navigate('/blog/sample')}
             to={'/blog/sample'}
           >
             Collaboration
-          </ThemeLink>
+          </ThemeLink> */}
           <ThemeLink
             onClick={() => navigate('/blog/sample')}
             to={'/blog/sample'}
@@ -59,11 +60,11 @@ const BlogPage = (props) => {
         </div>
 
         {/* Blog Grid */}
-        <div className={styles.blogsContainer}>
+        {/* <div className={styles.blogsContainer}>
           <Container size={'large'}>
             <BlogPreviewGrid data={blogData} hideReadMoreOnWeb showExcerpt />
           </Container>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );
