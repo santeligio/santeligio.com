@@ -30,7 +30,7 @@ const AboutPage = (props) => {
           title={`Compagnia di Sant'Eligio \n Una lunga storia`}
         />
 
-        <div className={styles.navContainer}>
+        {/* <div className={styles.navContainer}>
           <ThemeLink onClick={() => handleScroll(historyRef)} to={'#history'}>
             History
           </ThemeLink>
@@ -43,7 +43,7 @@ const AboutPage = (props) => {
           >
             Sustainability
           </ThemeLink>
-        </div>
+        </div> */}
 
         <Container size={'large'} spacing={'min'}>
           <div className={styles.detailContainer} ref={historyRef}>
@@ -53,14 +53,14 @@ const AboutPage = (props) => {
           </div>
         </Container>
 
-        <div className={styles.imageContainer}>
+        {/* <div className={styles.imageContainer}>
           <img alt={'shirt brand'} src={'/about1.png'}></img>
-        </div>
+        </div> */}
 
         <Container size={'large'} spacing={'min'}>
           <div className={styles.content}>
-            <h3>Our Values</h3>
-            <div ref={valuesRef}>
+            {/* <h3>I nostri valori</h3> */}
+            {/* <div ref={valuesRef}>
               <p>
                 Sunspel produced some of the world's earliest T-shirts. In the
                 late 1800s the business made luxury tunics and undershirts from
@@ -79,9 +79,10 @@ const AboutPage = (props) => {
                 <li>Only natural materials</li>
               </ol>
               <img alt={'founder'} src={'/about2.png'}></img>
-            </div>
-            <h3>Sustainability</h3>
-            <div id={'#sustainability'} ref={sustainabilityRef}>
+            </div> */}
+
+            {/* <h3>Sustainability</h3> */}
+            {/* <div id={'#sustainability'} ref={sustainabilityRef}>
               <p>
                 Our founder, Thomas Hill, had both an eye for quality and a
                 desire to innovate. As well as using the finest fibres such as
@@ -104,13 +105,13 @@ const AboutPage = (props) => {
                 Sunspel Classic T-shirt is recognised as the finest in the
                 world.
               </p>
-            </div>
+            </div> */}
           </div>
         </Container>
 
-        <div className={styles.imageContainer}>
+        {/* <div className={styles.imageContainer}>
           <img alt={'shirt backwards'} src={'/about3.png'}></img>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );
