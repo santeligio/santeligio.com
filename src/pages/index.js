@@ -14,11 +14,15 @@ import Quote from '../components/Quote';
 // import { generateMockBlogData, generateMockProductData } from '../helpers/mock';
 
 import * as styles from './index.module.css';
-// import { Link, navigate } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 const IndexPage = () => {
   // const newArrivals = generateMockProductData(3, 'shirt');
   // const blogData = generateMockBlogData(3);
+
+  const goToAbout = () => {
+    navigate('/about');
+  };
 
   // const goToShop = () => {
   //   navigate('/shop');
@@ -41,7 +45,7 @@ const IndexPage = () => {
         title={'Compagnia di Sant\'Eligio'}
         subtitle={'Una lunga storia che ci piace ricordare'}
         ctaText={'Approfondisci'}
-        // ctaAction={goToShop}
+        ctaAction={goToAbout}
       />
 
       {/* Message Container */}
@@ -147,6 +151,7 @@ const IndexPage = () => {
           ctaText={'dettagli'}
           maxWidth={'660px'}
           ctaStyle={styles.ctaCustomButton}
+          ctaAction={goToAbout}
         />
       </div>
 
