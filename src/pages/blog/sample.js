@@ -12,50 +12,70 @@ const SamplePage = (props) => {
         <Container>
           <div className={styles.blogContainer}>
             <Blog
-              category={'design'}
-              title={'Friends of Sydney: Flora Fricker'}
-              image={'/blogFeatured.png'}
+              category={'storia'}
+              title={'La vecchia bandiera di Sant\'Eligio'}
+              // image={'/blogFeatured.png'}
+              image={'/santeligio/wa-2024-06-10-133426-1.jpeg'}
               alt={''}
             >
               <div className={styles.content}>
                 <p className={styles.excerpt}>
-                  London-based floral designer Flora Fricker champions seasonal
-                  British flowers and UK producers in her beautiful and
-                  sustainable creations. This season, we worked with Flora to
-                  style Sunspel stores for Christmas, for which she produced
-                  eye-catching sustainably sourced wreaths.
+                  Ritrovata per caso in una vecchia scatola di vini, la prima
+                  Bandiera è un cimelio che la Compagnia di Sant'Eligio
+                  intende preservare a ricordo della tradizione.
                 </p>
                 <p className={styles.blogParagraph}>
+                  In una giornata di novembre 2023 Adriana e Giorgio
+                  ritrovano presso un ripostiglio della Pro Loco di Vernante
+                  una vecchia scatola di cartone che in origine conteneva delle bottiglie di vino.  
+                </p>
+                <div className={styles.imagesContainer}>
+                  <div className={styles.imageContainer}>
+                    <img src={'/santeligio/20231125-142120.jpg'} alt={'sample1'} />
+                  </div>
+                </div>
+                <p className={styles.blogParagraph}>
+                  Aprendo un lembo della scatola però si rivela un indizio del vero contenuto.  
+                </p>
+                <div className={styles.imagesContainer}>
+                  <div className={styles.imageContainer}>
+                    <img src={'/santeligio/20231125-142205.jpg'} alt={'sample1'} />
+                  </div>
+                </div>
+                <p className={styles.blogParagraph}>
+                  Continua...  
+                </p>
+                {/* <p className={styles.blogParagraph}>
                   Delaware limited liability company (The Sydney) collects
                   personal information that you voluntarily provide when
                   applying or registering for an account with The Upside or
                   making a purchase on The Upside website; www.theupside.com
                   (the Website).
-                </p>
-                <p className={styles.blogParagraph}>
+                </p> */}
+                {/* <p className={styles.blogParagraph}>
                   This Privacy Policy (Privacy Policy) outlines how your
                   information is collected, used and disclosed when you access
                   or use our Services as defined in our Terms. This information
                   is collected, used and disclosed in accordance with the
                   Privacy Act 1988 (Cth) (Privacy Act).
-                </p>
-                <p className={styles.blogParagraph}>
+                </p> */}
+                {/* <p className={styles.blogParagraph}>
                   This Privacy Policy is incorporated by reference into our
                   Terms. Any capitalized terms not defined in this Policy are
                   defined in the Terms. You agree to comply with all Terms when
                   accessing or using our Services, including this Privacy
                   Policy.
-                </p>
+                </p> */}
               </div>
-              <div className={styles.imagesContainer}>
+              {/* <div className={styles.imagesContainer}>
                 <div className={styles.imageContainer}>
                   <img src={'/cloth.png'} alt={'sample1'} />
                 </div>
                 <div className={styles.imageContainer}>
                   <img src={'/collections/collection1.png'} alt={'sample2'} />
                 </div>
-              </div>
-              <div className={styles.content}>
+              </div> */}
+              {/* <div className={styles.content}>
                 <h2 className={styles.blogSubHeader}>2. Lorem ipsum</h2>
                 <p className={styles.blogParagraph}>
                   Our Services, including but not limited to the registration of
@@ -82,7 +102,7 @@ const SamplePage = (props) => {
                   The Upside collects, uses and discloses information regarding
                   users aged 13-18 in the same manner as it does for adults.
                 </p>
-              </div>
+              </div> */}
             </Blog>
           </div>
         </Container>
