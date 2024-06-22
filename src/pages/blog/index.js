@@ -21,9 +21,9 @@ const BlogPage = (props) => {
           // image={'/blogCover.png'}
           image={'/santeligio/wa-2024-06-10-133426-1.jpeg'}
           title={`La vecchia bandiera della Compagnia`}
-          ctaLink={'read story'}
+          ctaLink={'leggi la storia'}
           ctaTo={'/blog/sample'}
-          header={'design'}
+          header={'storia'}
         />
 
         <div className={styles.navContainer}>
@@ -31,7 +31,7 @@ const BlogPage = (props) => {
             onClick={() => navigate('/blog/sample')}
             to={'/blog/sample'}
           >
-            All Posts
+            Tutti i Post
           </ThemeLink>
           {/* <ThemeLink
             onClick={() => navigate('/blog/sample')}
