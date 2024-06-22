@@ -26,8 +26,8 @@ const AboutPage = (props) => {
         {/* Hero Container */}
         <Hero
           maxWidth={'900px'}
-          image={'/santeligio_1900.jpg'}
-          title={`Compagnia di Sant'Eligio \n Una lunga storia`}
+          image={'/santeligio_2023.jpg'}
+          title={`Compagnia di Sant'Eligio \n Chi siamo`}
         />
 
         {/* <div className={styles.navContainer}>
@@ -48,7 +48,12 @@ const AboutPage = (props) => {
         <Container size={'large'} spacing={'min'}>
           <div className={styles.detailContainer} ref={historyRef}>
             <p>
-              Fondata nel 1858, La Compagnia di Sant'Eligio e'...
+              Fondata nel 1858 da una ventina di Soci che praticavano la professione del Carrettiere (in dialetto Vernantese, "Cartouné").
+
+              La professione del "Cartouné" - che ai giorni nostri potremmo paragonare a quella del camionista,
+              rappresentava un mestiere molto redditizio nella Valle Vermenagna, da sempre via di collegamento tra la Provincia di Cuneo e il mare.
+              
+              La Compagnia di Sant'Eligio e' costituita dai discendenti dei Soci Fondatori e si tramanda gelosamente per linea gerarchica al discendente maschio più giovane.
             </p>
           </div>
         </Container>
