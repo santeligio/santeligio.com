@@ -14,7 +14,8 @@ import Quote from '../components/Quote';
 // import { generateMockBlogData, generateMockProductData } from '../helpers/mock';
 
 import * as styles from './index.module.css';
-import { Link, navigate } from 'gatsby';
+// import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
 
 const IndexPage = () => {
   // const newArrivals = generateMockProductData(3, 'shirt');
@@ -154,6 +155,21 @@ const IndexPage = () => {
           ctaAction={goToAbout}
         />
       </div>
+
+      {/* Quote 2 */}
+      {/* <Quote
+        bgColor={'var(--standard-light-grey)'}
+        title={'about Sydney'}
+        quote={
+          '“We believe in two things: the pursuit of quality in everything we do, and looking after one another. Everything else should take care of itself.”'
+        } */}
+        <Quote
+        bgColor={'var(--standard-light-grey)'}
+        title={'Prossimi Appuntamenti'}
+        quote={
+          'Appuntamento in piazza Mandoulera a Vernante domenica 7 luglio per la tradizionale "scaplada"!'
+        }
+      />
 
       {/* Social Media */}
       {/* <div className={styles.socialContainer}>
