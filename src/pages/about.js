@@ -2,23 +2,23 @@ import React, { useRef } from 'react';
 
 import Container from '../components/Container';
 import Hero from '../components/Hero';
-import ThemeLink from '../components/ThemeLink';
+// import ThemeLink from '../components/ThemeLink';
 import Layout from '../components/Layout/Layout';
 
 import * as styles from './about.module.css';
 const AboutPage = (props) => {
   let historyRef = useRef();
-  let valuesRef = useRef();
-  let sustainabilityRef = useRef();
+  // let valuesRef = useRef();
+  // let sustainabilityRef = useRef();
 
-  const handleScroll = (elementReference) => {
-    if (elementReference) {
-      window.scrollTo({
-        behavior: 'smooth',
-        top: elementReference.current.offsetTop - 280,
-      });
-    }
-  };
+  // const handleScroll = (elementReference) => {
+  //   if (elementReference) {
+  //     window.scrollTo({
+  //       behavior: 'smooth',
+  //       top: elementReference.current.offsetTop - 280,
+  //     });
+  //   }
+  // };
 
   return (
     <Layout disablePaddingBottom>
