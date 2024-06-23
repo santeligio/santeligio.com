@@ -5,7 +5,27 @@ const Policy = (props) => {
   return (
     <div className={styles.root}>
       <div className={styles.section}>
-        <h3>1. Background</h3>
+        <h3>Privacy Policy (Italiano)</h3>
+        <p>
+          La Compagnia di Sant'Eligio (
+          <a href="https://santeligio.com">santeligio.com</a>) e terze parti selezionate raccogliamo
+          informazioni personali e utilizziamo cookie o tecnologie simili per finalità tecniche
+          e, con il tuo consenso, anche per le finalità di funzionalità, esperienza,
+          misurazione e marketing (con annunci personalizzati).
+        </p>
+        <p>
+          Puoi liberamente prestare, rifiutare o revocare il tuo consenso, in qualsiasi momento,
+          accedendo al pannello delle preferenze. Il rifiuto del consenso può rendere non disponibili le relative funzioni.
+        </p>
+        <p>
+          Usa il pulsante “Accetta” per acconsentire. Usa il pulsante “Rifiuta” per continuare senza accettare.
+        </p>
+      </div>
+
+      <div className={styles.section}>
+        <h3>Privacy Policy (US English)</h3>
+
+        {/* <h4>1. Background</h4> */}
         <p>
           La Compagnia di Sant'Eligio (
           <a href="https://santeligio.com">santeligio.com</a>) collects personal
@@ -29,7 +49,7 @@ const Policy = (props) => {
       </div>
 
       <div className={styles.section}>
-        <h3>2. Inclusions</h3>
+        {/* <h4>2. Inclusions</h4> */}
         <p>
           Our Services, including but not limited to the registration of an
           account with us or placing of an order, is not intended to be used by
@@ -58,7 +78,7 @@ const Policy = (props) => {
       </div>
 
       <div className={styles.section}>
-        <h3>3. Limitations</h3>
+        {/* <h4>3. Limitations</h4> */}
         <p>
           You must only use our Services in accordance with this Privacy Policy
           and any applicable law or regulations. You agree to refrain from
