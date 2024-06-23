@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Attribute from '../Attribute';
+// import Attribute from '../Attribute';
 
 import * as styles from './AttributeGrid.module.css';
 
