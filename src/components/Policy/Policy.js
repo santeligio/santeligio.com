@@ -8,17 +8,20 @@ const Policy = (props) => {
         <h3>Privacy Policy (Italiano)</h3>
         <p>
           La Compagnia di Sant'Eligio (
-          <a href="https://santeligio.com">santeligio.com</a>) e terze parti selezionate raccogliamo
-          informazioni personali e utilizziamo cookie o tecnologie simili per finalità tecniche
-          e, con il tuo consenso, anche per le finalità di funzionalità, esperienza,
-          misurazione e marketing (con annunci personalizzati).
+          <a href="https://santeligio.com">santeligio.com</a>) e terze parti
+          selezionate raccogliamo informazioni personali e utilizziamo cookie o
+          tecnologie simili per finalità tecniche e, con il tuo consenso, anche
+          per le finalità di funzionalità, esperienza, misurazione e marketing
+          (con annunci personalizzati).
         </p>
         <p>
-          Puoi liberamente prestare, rifiutare o revocare il tuo consenso, in qualsiasi momento,
-          accedendo al pannello delle preferenze. Il rifiuto del consenso può rendere non disponibili le relative funzioni.
+          Puoi liberamente prestare, rifiutare o revocare il tuo consenso, in
+          qualsiasi momento, accedendo al pannello delle preferenze. Il rifiuto
+          del consenso può rendere non disponibili le relative funzioni.
         </p>
         <p>
-          Usa il pulsante “Accetta” per acconsentire. Usa il pulsante “Rifiuta” per continuare senza accettare.
+          Usa il pulsante “Accetta” per acconsentire. Usa il pulsante “Rifiuta”
+          per continuare senza accettare.
         </p>
       </div>
 
