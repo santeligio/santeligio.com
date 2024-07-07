@@ -2,23 +2,23 @@ import React, { useRef } from 'react';
 
 import Container from '../components/Container';
 import Hero from '../components/Hero';
-// import ThemeLink from '../components/ThemeLink';
+import ThemeLink from '../components/ThemeLink';
 import Layout from '../components/Layout/Layout';
 
 import * as styles from './about.module.css';
 const AboutPage = (props) => {
   let historyRef = useRef();
-  // let valuesRef = useRef();
+  let sociRef = useRef();
   // let sustainabilityRef = useRef();
 
-  // const handleScroll = (elementReference) => {
-  //   if (elementReference) {
-  //     window.scrollTo({
-  //       behavior: 'smooth',
-  //       top: elementReference.current.offsetTop - 280,
-  //     });
-  //   }
-  // };
+  const handleScroll = (elementReference) => {
+    if (elementReference) {
+      window.scrollTo({
+        behavior: 'smooth',
+        top: elementReference.current.offsetTop - 280,
+      });
+    }
+  };
 
   return (
     <Layout disablePaddingBottom>
@@ -26,68 +26,74 @@ const AboutPage = (props) => {
         {/* Hero Container */}
         <Hero
           maxWidth={'900px'}
-          image={'/santeligio_2023.jpg'}
+          image={'/santeligio/20190818-convenzione-1858-pag1.jpg'}
           title={`Compagnia di Sant'Eligio \n Chi siamo`}
         />
 
-        {/* <div className={styles.navContainer}>
+        <div className={styles.navContainer}>
           <ThemeLink onClick={() => handleScroll(historyRef)} to={'#history'}>
-            History
+            Storia
           </ThemeLink>
-          <ThemeLink onClick={() => handleScroll(valuesRef)} to={'#values'}>
-            Values
+          <ThemeLink onClick={() => handleScroll(sociRef)} to={'#values'}>
+            Elenco Soci
           </ThemeLink>
-          <ThemeLink
+          {/* <ThemeLink
             onClick={() => handleScroll(sustainabilityRef)}
             to={'#sustainability'}
           >
             Sustainability
-          </ThemeLink>
-        </div> */}
+          </ThemeLink> */}
+        </div>
 
         <Container size={'large'} spacing={'min'}>
           <div className={styles.detailContainer} ref={historyRef}>
             <p>
-              Fondata nel 1858 da una ventina di Soci che praticavano la
-              professione del Carrettiere (in dialetto Vernantese, "Cartouné").
-              La professione del "Cartouné" - che ai giorni nostri potremmo
-              paragonare a quella del camionista, rappresentava un mestiere
-              molto redditizio nella Valle Vermenagna, da sempre via di
-              collegamento tra la Provincia di Cuneo e il mare. La Compagnia di
-              Sant'Eligio e' costituita dai discendenti dei Soci Fondatori e si
-              tramanda gelosamente per linea gerarchica al discendente maschio
+              La più antica testimonianza della Compagnia di Sant'Eligio di Vernante
+              risale al 5 aprile 1858, data della Convenzione sottoscritta
+              da una ventina di Soci che praticavano la professione del Carrettiere
+              (in dialetto Vernantese, "Cartouné").
+            </p>
+            <p>  
+              La professione del "Cartouné" - che potremmo paragonare a quella
+              del camionista dei giorni nostri, rappresentava un mestiere molto
+              redditizio nella Valle Vermenagna, da sempre via di collegamento
+              tra la Provincia di Cuneo e il mare.
+            </p>
+            <p>
+              La Compagnia di Sant'Eligio e' costituita dai discendenti dei Soci Fondatori
+              e si tramanda rigorosamente per linea gerarchica al discendente maschio
               più giovane.
             </p>
           </div>
         </Container>
 
-        {/* <div className={styles.imageContainer}>
-          <img alt={'shirt brand'} src={'/about1.png'}></img>
-        </div> */}
+        <div className={styles.imageContainer}>
+          <img alt={'Convenzione 1858'} src={'/santeligio_2023.jpg'}></img>
+        </div>
 
         <Container size={'large'} spacing={'min'}>
           <div className={styles.content}>
-            {/* <h3>I nostri valori</h3> */}
-            {/* <div ref={valuesRef}>
+            {<h3>I Soci della Compagnia</h3>}
+            {<div ref={sociRef}>
               <p>
-                Sunspel produced some of the world's earliest T-shirts. In the
-                late 1800s the business made luxury tunics and undershirts from
-                lightweight Sea Island cotton for export to the Far East and
-                other warm climates. While these garments initially had silk
-                buttoned plackets, these were removed in the early 1900s and
-                replaced with simple bound necks to reduce manufacturing costs -
-                creating the T-shirt. We've supplied the world as the T-shirt
-                has evolved from underwear to outerwear, from symbol of youthful
-                rebellion to everyday wardrobe staple, and we've spent decades
-                refining its every last aspect.
+                (Ultimo aggiornamento: 6 luglio 2024)
               </p>
               <ol>
-                <li>Be an ecowear</li>
-                <li>Sophisticated and not mass-produced</li>
-                <li>Only natural materials</li>
+                <li>Macario Gianpaolo (Priore)</li>
+                <li>Bertaina Mario</li>
+                <li>Macario Gianmarco</li>
+                <li>Macario Livio</li>
+                <li>Macario Fulvio</li>
+                <li>Macario Andrea</li>
+                <li>Macario Loris</li>
+                <li>Pettavino Adriana</li>
+                <li>Pettavino Miriana</li>
+                <li>Macario Christian</li>
+                <li>Risso Francesco</li>
+                <li>Pettavino Paolo</li>
               </ol>
-              <img alt={'founder'} src={'/about2.png'}></img>
-            </div> */}
+              {/* <img alt={'founder'} src={'/about2.png'}></img> */}
+            </div>}
 
             {/* <h3>Sustainability</h3> */}
             {/* <div id={'#sustainability'} ref={sustainabilityRef}>
