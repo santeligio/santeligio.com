@@ -67,27 +67,28 @@ const AboutPage = (props) => {
 
         <Container size={'large'} spacing={'min'}>
           <div className={styles.content}>
-            {/* <h3>I nostri valori</h3> */}
-            {/* <div ref={valuesRef}>
+            {<h3>I Soci della Compagnia</h3>}
+            {<div>
+              {/* ref={valuesRef} */}
               <p>
-                Sunspel produced some of the world's earliest T-shirts. In the
-                late 1800s the business made luxury tunics and undershirts from
-                lightweight Sea Island cotton for export to the Far East and
-                other warm climates. While these garments initially had silk
-                buttoned plackets, these were removed in the early 1900s and
-                replaced with simple bound necks to reduce manufacturing costs -
-                creating the T-shirt. We've supplied the world as the T-shirt
-                has evolved from underwear to outerwear, from symbol of youthful
-                rebellion to everyday wardrobe staple, and we've spent decades
-                refining its every last aspect.
+                (Ultimo aggiornamento: 6 luglio 2024)
               </p>
               <ol>
-                <li>Be an ecowear</li>
-                <li>Sophisticated and not mass-produced</li>
-                <li>Only natural materials</li>
+                <li>Macario Gianpaolo (Priore)</li>
+                <li>Bertaina Mario</li>
+                <li>Macario Gianmarco</li>
+                <li>Macario Livio</li>
+                <li>Macario Fulvio</li>
+                <li>Macario Andrea</li>
+                <li>Macario Loris</li>
+                <li>Pettavino Adriana</li>
+                <li>Pettavino Miriana (nuovo socio)</li>
+                <li>Macario Christian (nuovo socio)</li>
+                <li>Risso Francesco</li>
+                <li>Pettavino Paolo</li>
               </ol>
-              <img alt={'founder'} src={'/about2.png'}></img>
-            </div> */}
+              {/* <img alt={'founder'} src={'/about2.png'}></img> */}
+            </div>}
 
             {/* <h3>Sustainability</h3> */}
             {/* <div id={'#sustainability'} ref={sustainabilityRef}>
