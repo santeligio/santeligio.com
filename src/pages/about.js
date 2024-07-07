@@ -87,8 +87,8 @@ const AboutPage = (props) => {
                 <li>Macario Andrea</li>
                 <li>Macario Loris</li>
                 <li>Pettavino Adriana</li>
-                <li>Pettavino Miriana (nuovo socio)</li>
-                <li>Macario Christian (nuovo socio)</li>
+                <li>Pettavino Miriana</li>
+                <li>Macario Christian</li>
                 <li>Risso Francesco</li>
                 <li>Pettavino Paolo</li>
               </ol>
