@@ -27,11 +27,17 @@ const BlogPage = (props) => {
         />
 
         <div className={styles.navContainer}>
-          <ThemeLink
+          {/* <ThemeLink
             onClick={() => navigate('/blog/sample')}
             to={'/blog/sample'}
           >
             Tutti i Post
+          </ThemeLink> */}
+          <ThemeLink
+            onClick={() => navigate('/blog/soci-2024')}
+            to={'/blog/soci-2024'}
+          >
+            News
           </ThemeLink>
           <ThemeLink
             onClick={() => navigate('/blog/soci-2024')}
@@ -50,12 +56,6 @@ const BlogPage = (props) => {
             to={'/blog/sample'}
           >
             Interview
-          </ThemeLink>
-          <ThemeLink
-            onClick={() => navigate('/blog/sample')}
-            to={'/blog/sample'}
-          >
-            News
           </ThemeLink>
         </div>
 
