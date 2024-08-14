@@ -90,7 +90,7 @@ const AboutPage = (props) => {
                 <li>Macario Christian</li>
                 <li>Risso Francesco</li>
                 <li>Pettavino Paolo</li>
-                <li>Macario Gianpaol</li>
+                <li>Macario Gianpaolo</li>
               </ol>
               {/* <img alt={'founder'} src={'/about2.png'}></img> */}
             </div>}
