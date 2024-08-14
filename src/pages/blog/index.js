@@ -37,14 +37,14 @@ const BlogPage = (props) => {
             onClick={() => navigate('/blog/sample')}
             to={'/blog/sample'}
           >
-            Design
+            Anno 2024
           </ThemeLink> */}
-          {/* <ThemeLink
-            onClick={() => navigate('/blog/sample')}
-            to={'/blog/sample'}
+          <ThemeLink
+            onClick={() => navigate('/blog/soci-2023')}
+            to={'/blog/soci-2023'}
           >
-            Collaboration
-          </ThemeLink> */}
+            Anno 2023
+          </ThemeLink>
           <ThemeLink
             onClick={() => navigate('/blog/sample')}
             to={'/blog/sample'}
