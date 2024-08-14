@@ -76,11 +76,10 @@ const AboutPage = (props) => {
             {<h3>I Soci della Compagnia</h3>}
             {<div ref={sociRef}>
               <p>
-                (Ultimo aggiornamento: 6 luglio 2024)
+                (Ultimo aggiornamento: 8 luglio 2024)
               </p>
               <ol>
-                <li>Macario Gianpaolo (Priore)</li>
-                <li>Bertaina Mario</li>
+                <li>Bertaina Mario (Priore)</li>
                 <li>Macario Gianmarco</li>
                 <li>Macario Livio</li>
                 <li>Macario Fulvio</li>
@@ -91,6 +90,7 @@ const AboutPage = (props) => {
                 <li>Macario Christian</li>
                 <li>Risso Francesco</li>
                 <li>Pettavino Paolo</li>
+                <li>Macario Gianpaol</li>
               </ol>
               {/* <img alt={'founder'} src={'/about2.png'}></img> */}
             </div>}
