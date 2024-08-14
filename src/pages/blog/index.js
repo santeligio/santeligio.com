@@ -27,35 +27,35 @@ const BlogPage = (props) => {
         />
 
         <div className={styles.navContainer}>
-          <ThemeLink
+          {/* <ThemeLink
             onClick={() => navigate('/blog/sample')}
             to={'/blog/sample'}
           >
             Tutti i Post
+          </ThemeLink> */}
+          <ThemeLink
+            onClick={() => navigate('/blog/soci-2024')}
+            to={'/blog/soci-2024'}
+          >
+            News
           </ThemeLink>
-          {/* <ThemeLink
-            onClick={() => navigate('/blog/sample')}
-            to={'/blog/sample'}
+          <ThemeLink
+            onClick={() => navigate('/blog/soci-2024')}
+            to={'/blog/soci-2024'}
           >
-            Design
-          </ThemeLink> */}
-          {/* <ThemeLink
-            onClick={() => navigate('/blog/sample')}
-            to={'/blog/sample'}
+            Anno 2024
+          </ThemeLink>
+          <ThemeLink
+            onClick={() => navigate('/blog/soci-2023')}
+            to={'/blog/soci-2023'}
           >
-            Collaboration
-          </ThemeLink> */}
+            Anno 2023
+          </ThemeLink>
           <ThemeLink
             onClick={() => navigate('/blog/sample')}
             to={'/blog/sample'}
           >
             Interview
-          </ThemeLink>
-          <ThemeLink
-            onClick={() => navigate('/blog/sample')}
-            to={'/blog/sample'}
-          >
-            News
           </ThemeLink>
         </div>
 

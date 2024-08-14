@@ -144,8 +144,8 @@ const IndexPage = () => {
           ctaStyle={styles.ctaCustomButton}
         /> */}
         <Hero
-          image={'/santeligio/santeligio_2023.jpg'}
-          title={'I soci del 2023'}
+          image={'/santeligio/2024-07-07-foto-gruppo-compagnia.jpg'}
+          title={'I soci della Compagnia'}
           // subtitle={
           //   'I discendenti della Compagnia di Sant.\'Eligio'
           // }
@@ -167,9 +167,11 @@ const IndexPage = () => {
         bgColor={'var(--standard-light-grey)'}
         title={'Prossimi Appuntamenti'}
         quote={
-          'Appuntamento in piazza Mandoulera a Vernante domenica 7 luglio per la tradizionale "scaplada"!'
+          'Venite al Comune di Vernante a vedere l\'Antica Bandiera della Compagnia dopo il restauro!'
         }
       />
+
+      {/* 'Appuntamento in piazza Mandoulera a Vernante domenica 7 luglio per la tradizionale "scaplada"!' */}
 
       {/* Social Media */}
       {/* <div className={styles.socialContainer}>
