@@ -33,12 +33,12 @@ const BlogPage = (props) => {
           >
             Tutti i Post
           </ThemeLink>
-          {/* <ThemeLink
-            onClick={() => navigate('/blog/sample')}
-            to={'/blog/sample'}
+          <ThemeLink
+            onClick={() => navigate('/blog/soci-2024')}
+            to={'/blog/soci-2024'}
           >
             Anno 2024
-          </ThemeLink> */}
+          </ThemeLink>
           <ThemeLink
             onClick={() => navigate('/blog/soci-2023')}
             to={'/blog/soci-2023'}
