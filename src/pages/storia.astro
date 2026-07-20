@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<Base
+  title="Storia"
+  description="La storia della Compagnia di Sant'Eligio di Vernante, dai Carrettieri del 1858 ai Soci di oggi."
+>
+  <Hero
+    compact
+    image="/santeligio/20190818-convenzione-1858-pag1.jpg"
+    imageAlt="Pagina della Convenzione del 1858"
+    title="Compagnia di Sant'Eligio — Chi siamo"
+  />
+
+  <nav
+    aria-label="Sezioni della pagina"
+    class="border-b border-parchment-200 bg-parchment-100"
+  >
+    <div class="mx-auto flex max-w-5xl gap-6 px-4 py-3 text-sm">
+      <a class="text-wine-700 hover:underline" href="#storia">Storia</a>
+      <a class="text-wine-700 hover:underline" href="#soci">Elenco Soci</a>
+    </div>
+  </nav>
+
+  <article class="prose-eligio mx-auto max-w-3xl px-4 py-12">
+    <div id="storia">
+      <p>
+        La più antica testimonianza della Compagnia di Sant'Eligio di Vernante
+        risale al 5 aprile 1858, data della Convenzione sottoscritta da una
+        ventina di Soci che praticavano la professione del Carrettiere (in
+        dialetto Vernantese, "Cartouné").
+      </p>
+      <p>
+        La professione del "Cartouné" — che potremmo paragonare a quella del
+        camionista dei giorni nostri — rappresentava un mestiere molto
+        redditizio nella Valle Vermenagna, da sempre via di collegamento tra
+        la Provincia di Cuneo e il mare.
+      </p>
+      <p>
+        La Compagnia di Sant'Eligio è costituita dai discendenti dei Soci
+        Fondatori e si tramanda rigorosamente per linea gerarchica al
+        discendente maschio più giovane.
+      </p>
+    </div>
+
+    <img
+      class="my-8 w-full rounded-lg"
+      src="/santeligio/2024-07-07-foto-gruppo-compagnia.jpg"
+      alt="Soci 2024"
+    />
+
+    <div id="soci">
+      <h2>I Soci della Compagnia</h2>
+      <p>(Ultimo aggiornamento: 14 agosto 2024)</p>
+      <ol>
+        <li>Bertaina Mario <b>(Priore)</b></li>
+        <li>Macario Gianmarco</li>
+        <li>Macario Livio</li>
+        <li>Macario Fulvio</li>
+        <li>Macario Andrea</li>
+        <li>Macario Loris</li>
+        <li>Pettavino Adriana</li>
+        <li>Pettavino Miriana</li>
+        <li>Macario Christian</li>
+        <li>Risso Francesco</li>
+        <li>Pettavino Paolo</li>
+        <li>Macario Gianpaolo</li>
+      </ol>
+    </div>
+  </article>
+</Base>

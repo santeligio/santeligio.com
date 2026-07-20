@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+
+// v1: gallery is wired but sparse — filling it with scanned slides and event
+// photos is out of scope for this issue (see santeligio.com#30, phase 2).
+const images = [
+  {
+    src: '/santeligio/santeligio_1900.jpg',
+    alt: "Fotografia storica della Compagnia, 1900 circa",
+  },
+  {
+    src: '/santeligio/20190818-convenzione-1858-pag1.jpg',
+    alt: 'Pagina della Convenzione del 1858',
+  },
+  {
+    src: '/santeligio/2024-07-07-foto-gruppo-compagnia.jpg',
+    alt: 'Foto di gruppo dei Soci, luglio 2024',
+  },
+  {
+    src: '/santeligio/santeligio_2023.jpg',
+    alt: 'Registro della Compagnia, edizione 2023',
+  },
+  {
+    src: '/santeligio/20231125-142120.jpg',
+    alt: "Momento di vita della Compagnia, novembre 2023",
+  },
+  {
+    src: '/santeligio/20231125-142205.jpg',
+    alt: "Momento di vita della Compagnia, novembre 2023",
+  },
+  {
+    src: '/santeligio/wa-2024-06-10-133426-1.jpeg',
+    alt: 'Foto della Compagnia, giugno 2024',
+  },
+];
+---
+
+<Base
+  title="Galleria"
+  description="Fotografie storiche e recenti della Compagnia di Sant'Eligio."
+>
+  <Hero compact image="/santeligio/santeligio_1900.jpg" imageAlt="" title="Galleria" />
+
+  <section class="mx-auto max-w-5xl px-4 py-12">
+    <p class="mb-8 text-ink-700">
+      Una prima raccolta di fotografie della Compagnia. La galleria verrà
+      ampliata con altro materiale storico e fotografico man mano che sarà
+      disponibile.
+    </p>
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+      {
+        images.map((img) => (
+          <img
+            src={img.src}
+            alt={img.alt}
+            class="aspect-square w-full rounded-lg object-cover"
+            loading="lazy"
+          />
+        ))
+      }
+    </div>
+  </section>
+</Base>

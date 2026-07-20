@@ -1,0 +1,53 @@
+---
+import { NAV, SITE } from '../consts';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href: string) =>
+  href === '/' ? pathname === '/' : pathname.startsWith(href);
+---
+
+<header class="border-b border-parchment-200 bg-parchment-50">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+    <a href="/" class="flex items-center gap-3">
+      <span
+        class="grid h-10 w-10 place-items-center rounded-full bg-wine-700 font-serif text-lg text-parchment-50"
+        aria-hidden="true">SE</span
+      >
+      <span class="font-serif text-lg leading-tight text-ink-900 sm:text-xl">
+        {SITE.title}
+      </span>
+    </a>
+
+    <nav aria-label="Navigazione principale">
+      <!-- Mobile toggle -->
+      <input type="checkbox" id="nav-toggle" class="peer hidden" />
+      <label
+        for="nav-toggle"
+        class="cursor-pointer rounded p-2 text-2xl leading-none text-ink-800 sm:hidden"
+        aria-label="Apri il menu">☰</label
+      >
+
+      <ul
+        class="absolute left-0 right-0 z-10 hidden flex-col gap-1 border-b border-parchment-200 bg-parchment-50 px-4 py-2 shadow-md peer-checked:flex sm:static sm:flex sm:flex-row sm:items-center sm:gap-6 sm:border-0 sm:p-0 sm:shadow-none"
+      >
+        {
+          NAV.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                class:list={[
+                  'block py-2 text-ink-700 hover:text-wine-700 sm:py-0',
+                  isActive(item.href) &&
+                    'font-semibold text-wine-700 underline decoration-gold-500 underline-offset-4',
+                ]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
