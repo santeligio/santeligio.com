@@ -1,0 +1,49 @@
+---
+// Dismissible hint inviting non-Italian readers to use their browser's
+// built-in translation. The site is authored only in Italian (no dual-language
+// authoring), so we point visitors to the tool their browser already has.
+---
+
+<div
+  id="translation-hint"
+  class="border-b border-parchment-200 bg-parchment-100 text-ink-700"
+  hidden
+>
+  <div
+    class="mx-auto flex max-w-5xl items-center gap-3 px-4 py-2 text-sm"
+  >
+    <span aria-hidden="true">🌐</span>
+    <p class="flex-1" lang="en">
+      This site is written in Italian. Use your browser's built-in translation
+      to read it in your language.
+    </p>
+    <button
+      type="button"
+      id="translation-hint-close"
+      class="rounded px-2 py-1 text-ink-700 hover:bg-parchment-200"
+      aria-label="Chiudi"
+    >
+      ✕
+    </button>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    const KEY = 'se-translation-hint-dismissed';
+    const el = document.getElementById('translation-hint');
+    if (!el) return;
+    const lang = (navigator.language || '').toLowerCase();
+    const dismissed = localStorage.getItem(KEY) === '1';
+    // Show only to non-Italian browsers that haven't dismissed it.
+    if (!dismissed && !lang.startsWith('it')) {
+      el.hidden = false;
+    }
+    const close = document.getElementById('translation-hint-close');
+    close &&
+      close.addEventListener('click', function () {
+        el.hidden = true;
+        localStorage.setItem(KEY, '1');
+      });
+  })();
+</script>

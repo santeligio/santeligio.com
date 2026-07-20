@@ -1,35 +1,24 @@
 {
-  "name": "gatsby-ecommerce-theme",
+  "name": "santeligio.com",
+  "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "An e-commerce theme designed by Matter Design for Netlify.",
-  "author": "Matter Design",
-  "keywords": [
-    "gatsby"
-  ],
+  "description": "Sito della Compagnia di Sant'Eligio di Vernante, ricostruito su Astro.",
+  "engines": {
+    "node": ">=18.20.8"
+  },
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop -p 5000",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "format": "prettier --write \"{gatsby-*.js,src/**/*.js}\"",
-    "plop": "plop"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@netlify/plugin-gatsby": "^3.7.1",
-    "cypress": "^10.0.3",
-    "gatsby": "^4.5.4",
-    "gatsby-plugin-manifest": "^4.14.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-helmet": "^6.1.0",
-    "react-slick": "^0.29.0"
-  },
-  "devDependencies": {
-    "gatsby-plugin-netlify": "^5.0.0",
-    "netlify-plugin-cypress": "~2.2.0",
-    "plop": "^3.0.5",
-    "prettier": "^2.6.2"
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.4.1",
+    "@tailwindcss/vite": "^4.1.11",
+    "astro": "^5.12.0",
+    "tailwindcss": "^4.1.11"
   }
 }

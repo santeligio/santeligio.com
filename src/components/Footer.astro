@@ -1,0 +1,51 @@
+---
+import { NAV, SITE } from '../consts';
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-16 border-t border-parchment-200 bg-ink-900 text-parchment-100">
+  <div
+    class="mx-auto grid max-w-5xl gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-3"
+  >
+    <div>
+      <h2 class="font-serif text-lg text-parchment-50">{SITE.title}</h2>
+      <p class="mt-2 max-w-xs text-sm text-parchment-200">
+        Vernante (CN) — una lunga storia che ci piace ricordare.
+      </p>
+    </div>
+
+    <nav aria-label="Navigazione footer">
+      <h2 class="font-serif text-sm uppercase tracking-wide text-gold-500">
+        Pagine
+      </h2>
+      <ul class="mt-2 space-y-1 text-sm">
+        {
+          NAV.map((item) => (
+            <li>
+              <a class="hover:text-gold-500" href={item.href}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div>
+      <h2 class="font-serif text-sm uppercase tracking-wide text-gold-500">
+        Contatti
+      </h2>
+      <p class="mt-2 text-sm">
+        <a class="hover:text-gold-500" href={`mailto:${SITE.email}`}>
+          {SITE.email}
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <div class="border-t border-ink-800">
+    <p class="mx-auto max-w-5xl px-4 py-4 text-xs text-parchment-200">
+      © 2023–{year} Compagnia di Sant'Eligio. Tutti i diritti riservati.
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,60 @@
+---
+interface Props {
+  image: string;
+  imageAlt?: string;
+  title: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  /** Vertical space; a shorter hero for interior pages. */
+  compact?: boolean;
+}
+
+const {
+  image,
+  imageAlt = '',
+  title,
+  subtitle,
+  ctaText,
+  ctaHref,
+  compact = false,
+} = Astro.props;
+---
+
+<section class="relative isolate overflow-hidden">
+  <img
+    src={image}
+    alt={imageAlt}
+    class:list={[
+      'absolute inset-0 -z-10 h-full w-full object-cover',
+    ]}
+    loading="eager"
+  />
+  <div class="absolute inset-0 -z-10 bg-ink-900/55"></div>
+
+  <div
+    class:list={[
+      'mx-auto flex max-w-5xl flex-col items-start justify-center px-4 text-parchment-50',
+      compact ? 'py-20 sm:py-24' : 'py-28 sm:py-40',
+    ]}
+  >
+    <h1 class="max-w-2xl font-serif text-3xl leading-tight text-parchment-50 sm:text-5xl">
+      {title}
+    </h1>
+    {
+      subtitle && (
+        <p class="mt-4 max-w-xl text-lg text-parchment-100">{subtitle}</p>
+      )
+    }
+    {
+      ctaText && ctaHref && (
+        <a
+          href={ctaHref}
+          class="mt-8 inline-block rounded bg-gold-500 px-6 py-3 font-medium text-ink-900 transition hover:bg-gold-600"
+        >
+          {ctaText}
+        </a>
+      )
+    }
+  </div>
+</section>

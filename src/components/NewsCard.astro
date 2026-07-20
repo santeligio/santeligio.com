@@ -1,0 +1,46 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  description?: string;
+  date: Date;
+  category?: string;
+  cover?: string;
+  coverAlt?: string;
+}
+
+const { href, title, description, date, category, cover, coverAlt } =
+  Astro.props;
+
+const dateLabel = new Intl.DateTimeFormat('it-IT', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+}).format(date);
+---
+
+<article
+  class="group overflow-hidden rounded-lg border border-parchment-200 bg-white shadow-sm transition hover:shadow-md"
+>
+  <a href={href} class="block">
+    {
+      cover && (
+        <img
+          src={cover}
+          alt={coverAlt ?? ''}
+          class="h-48 w-full object-cover"
+          loading="lazy"
+        />
+      )
+    }
+    <div class="p-5">
+      <p class="text-xs uppercase tracking-wide text-gold-600">
+        {category} · <time datetime={date.toISOString()}>{dateLabel}</time>
+      </p>
+      <h3 class="mt-2 font-serif text-xl text-ink-900 group-hover:text-wine-700">
+        {title}
+      </h3>
+      {description && <p class="mt-2 text-sm text-ink-700">{description}</p>}
+    </div>
+  </a>
+</article>

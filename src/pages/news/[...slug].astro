@@ -1,0 +1,44 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const dateLabel = new Intl.DateTimeFormat('it-IT', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+}).format(post.data.date);
+---
+
+<Base title={post.data.title} description={post.data.description} image={post.data.cover}>
+  <Hero
+    compact
+    image={post.data.cover ?? '/santeligio/santeligio_2023.jpg'}
+    imageAlt={post.data.coverAlt ?? ''}
+    title={post.data.title}
+  />
+
+  <article class="prose-eligio mx-auto max-w-3xl px-4 py-12">
+    <p class="text-sm uppercase tracking-wide text-gold-600">
+      {post.data.category} · <time datetime={post.data.date.toISOString()}
+        >{dateLabel}</time
+      >
+    </p>
+    <Content />
+  </article>
+
+  <div class="mx-auto max-w-3xl px-4 pb-12">
+    <a class="text-wine-700 hover:underline" href="/news">← Tutte le news</a>
+  </div>
+</Base>

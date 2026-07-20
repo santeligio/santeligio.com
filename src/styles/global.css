@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+/*
+  Palette scelta per una confraternita storica:
+  - "ink"      testo scuro caldo
+  - "wine"     bordeaux della tradizione
+  - "gold"     oro/ottone degli ornamenti
+  - "parchment" sfondo color pergamena
+*/
+@theme {
+  --font-serif: 'Georgia', 'Cambria', 'Times New Roman', serif;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+
+  --color-parchment-50: #fdfbf6;
+  --color-parchment-100: #f7f1e3;
+  --color-parchment-200: #ece0c4;
+
+  --color-ink-700: #3b332b;
+  --color-ink-800: #2a241e;
+  --color-ink-900: #1c1813;
+
+  --color-wine-600: #8f2d3b;
+  --color-wine-700: #74232f;
+  --color-wine-800: #5c1b26;
+
+  --color-gold-500: #b8892b;
+  --color-gold-600: #9c7220;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-parchment-50);
+  color: var(--color-ink-800);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  color: var(--color-ink-900);
+}
+
+/* Rich text (Markdown-rendered content) */
+.prose-eligio {
+  line-height: 1.75;
+}
+.prose-eligio h2 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-eligio h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.prose-eligio p {
+  margin-bottom: 1rem;
+}
+.prose-eligio a {
+  color: var(--color-wine-700);
+  text-decoration: underline;
+}
+.prose-eligio ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.prose-eligio ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.prose-eligio li {
+  margin-bottom: 0.25rem;
+}
+.prose-eligio img {
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}

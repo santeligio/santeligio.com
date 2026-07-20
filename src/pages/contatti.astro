@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import { SITE } from '../consts';
+---
+
+<Base
+  title="Contatti"
+  description="Come contattare la Compagnia di Sant'Eligio di Vernante."
+>
+  <Hero
+    compact
+    image="/santeligio/santeligio_2023.jpg"
+    imageAlt=""
+    title="Contatti"
+  />
+
+  <section class="mx-auto max-w-2xl px-4 py-12">
+    <p class="text-ink-700">
+      Per informazioni, richieste o segnalazioni potete scriverci
+      all'indirizzo:
+    </p>
+    <p class="mt-2">
+      <a
+        class="text-lg font-semibold text-wine-700 hover:underline"
+        href={`mailto:${SITE.email}`}
+      >
+        {SITE.email}
+      </a>
+    </p>
+
+    <h2 class="mt-10 font-serif text-xl text-ink-900">Privacy</h2>
+    <p class="mt-2 text-ink-700">
+      Il materiale storico e archivistico pubblicato su questo sito è di
+      natura documentaria. I nominativi dei Soci viventi sono pubblicati solo
+      con il loro consenso. Per richieste relative ai propri dati, scrivete
+      all'indirizzo sopra indicato.
+    </p>
+  </section>
+</Base>

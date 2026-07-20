@@ -1,0 +1,9 @@
+# Redirects from the previous Gatsby site's URL structure.
+# See https://github.com/santeligio/santeligio.com/issues/30
+/about              /storia            301
+/blog               /news              301
+/blog/soci-2023     /news/soci-2023    301
+/blog/soci-2024     /news/soci-2024    301
+/support            /contatti          301
+/support/*          /contatti          301
+/faq                /contatti          301

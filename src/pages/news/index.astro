@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import NewsCard from '../../components/NewsCard.astro';
+
+const allNews = await getCollection('news', ({ data }) => !data.draft);
+const posts = allNews.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Base
+  title="News"
+  description="Le novità e gli aggiornamenti della Compagnia di Sant'Eligio."
+>
+  <Hero
+    compact
+    image="/santeligio/santeligio_2023.jpg"
+    imageAlt="Registro della Compagnia"
+    title="News"
+    subtitle="Le novità della Compagnia"
+  />
+
+  <section class="mx-auto max-w-5xl px-4 py-12">
+    {
+      posts.length === 0 ? (
+        <p class="text-ink-700">Nessuna novità pubblicata al momento.</p>
+      ) : (
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <NewsCard
+              href={`/news/${post.id}`}
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              category={post.data.category}
+              cover={post.data.cover}
+              coverAlt={post.data.coverAlt}
+            />
+          ))}
+        </div>
+      )
+    }
+  </section>
+</Base>

@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<Base>
+  <Hero
+    image="/santeligio/santeligio_1900.jpg"
+    imageAlt="Fotografia storica della Compagnia di Sant'Eligio, 1900 circa"
+    title="Compagnia di Sant'Eligio"
+    subtitle="Una lunga storia che ci piace ricordare"
+    ctaText="Scopri la storia"
+    ctaHref="/storia"
+  />
+
+  <section class="mx-auto max-w-3xl px-4 py-16 text-center">
+    <blockquote class="font-serif text-2xl italic text-ink-900">
+      "Vogliamo proseguire una tradizione che si ripete da duecento anni."
+    </blockquote>
+  </section>
+
+  <section class="bg-parchment-100">
+    <div
+      class="relative isolate mx-auto flex max-w-5xl flex-col items-start overflow-hidden px-4 py-20 text-parchment-50 sm:px-8"
+    >
+      <img
+        src="/santeligio/2024-07-07-foto-gruppo-compagnia.jpg"
+        alt="Foto di gruppo dei Soci della Compagnia, luglio 2024"
+        class="absolute inset-0 -z-10 h-full w-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 -z-10 bg-ink-900/60"></div>
+      <h2 class="max-w-xl font-serif text-3xl text-parchment-50">
+        I soci della Compagnia
+      </h2>
+      <a
+        href="/storia#soci"
+        class="mt-6 inline-block rounded bg-gold-500 px-6 py-3 font-medium text-ink-900 transition hover:bg-gold-600"
+      >
+        Dettagli
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-16 text-center">
+    <h2 class="font-serif text-2xl text-ink-900">Prossimi appuntamenti</h2>
+    <p class="mt-4 text-lg text-ink-700">
+      Venite al Comune di Vernante a vedere l'Antica Bandiera della Compagnia
+      dopo il restauro!
+    </p>
+  </section>
+</Base>
