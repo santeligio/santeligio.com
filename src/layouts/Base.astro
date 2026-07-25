@@ -44,6 +44,16 @@ const imageUrl = new URL(image, SITE.url).href;
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={imageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
+
+    {
+      import.meta.env.PUBLIC_CLOUDFLARE_BEACON_TOKEN && (
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={`{"token": "${import.meta.env.PUBLIC_CLOUDFLARE_BEACON_TOKEN}"}`}
+        />
+      )
+    }
   </head>
   <body class="flex min-h-screen flex-col">
     <TranslationHint />
