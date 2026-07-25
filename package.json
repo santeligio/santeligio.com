@@ -5,7 +5,7 @@
   "private": true,
   "description": "Sito della Compagnia di Sant'Eligio di Vernante, ricostruito su Astro.",
   "engines": {
-    "node": ">=18.20.8"
+    "node": ">=20.9.0"
   },
   "scripts": {
     "dev": "astro dev",

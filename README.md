@@ -9,7 +9,7 @@ Hosted on [Netlify](https://www.netlify.com/).
 
 ## Development
 
-Requires Node.js >= 18.20.8 (or 20+).
+Requires Node.js >= 20.9.0.
 
 ```sh
 npm install
