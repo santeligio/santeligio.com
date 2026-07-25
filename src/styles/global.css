@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /*
   Palette scelta per una confraternita storica:
@@ -8,9 +8,9 @@
   - "parchment" sfondo color pergamena
 */
 @theme {
-  --font-serif: 'Georgia', 'Cambria', 'Times New Roman', serif;
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
-    sans-serif;
+  --font-serif: "Georgia", "Cambria", "Times New Roman", serif;
+  --font-sans:
+    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   --color-parchment-50: #fdfbf6;
   --color-parchment-100: #f7f1e3;

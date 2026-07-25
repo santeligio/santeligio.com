@@ -7,8 +7,8 @@
         "ignoreAtRules": [
           "theme",
           "layer",
-          "apply",
           "tailwind",
+          "apply",
           "variant",
           "custom-variant",
           "utility",
@@ -18,6 +18,10 @@
           "reference"
         ]
       }
-    ]
+    ],
+    "import-notation": "string",
+    "value-keyword-case": ["lower", { "ignoreProperties": ["/^--font/"] }],
+    "custom-property-empty-line-before": null,
+    "rule-empty-line-before": null
   }
 }
