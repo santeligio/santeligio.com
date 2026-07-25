@@ -1,6 +1,7 @@
 # santeligio.com
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bbe01364-e84d-4cc2-89d8-29cd682fb60c/deploy-status)](https://app.netlify.com/projects/santeligio/deploys)
+[![Lint Code Base](https://github.com/santeligio/santeligio.com/actions/workflows/super-linter.yml/badge.svg)](https://github.com/santeligio/santeligio.com/actions/workflows/super-linter.yml)
 
 Sources for site <https://santeligio.com/>.
 
