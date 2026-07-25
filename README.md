@@ -25,6 +25,19 @@ npm run preview   # preview the production build
 - Redirects from the previous site's URLs are defined in `public/_redirects`
   (Netlify's redirect file format).
 
+## Analytics
+
+The site uses [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/)
+(cookie-free, no client-side state) instead of Google Analytics. To enable it:
+
+1. Enable Web Analytics for `santeligio.com` in the Cloudflare dashboard and
+   copy the generated beacon token.
+2. Set the `PUBLIC_CLOUDFLARE_BEACON_TOKEN` environment variable in the
+   Netlify site settings to that token.
+
+The beacon script is only injected when this variable is set, so builds
+without it (e.g. local dev) stay analytics-free.
+
 ## Privacy rule
 
 Historical/archival material is publishable; living members are named only
