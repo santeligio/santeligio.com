@@ -44,8 +44,11 @@ const year = new Date().getFullYear();
   </div>
 
   <div class="border-t border-ink-800">
-    <p class="mx-auto max-w-5xl px-4 py-4 text-xs text-parchment-200">
-      © 2023–{year} Compagnia di Sant'Eligio. Tutti i diritti riservati.
+    <p
+      class="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 px-4 py-4 text-xs text-parchment-200"
+    >
+      <span>© 2023–{year} Compagnia di Sant'Eligio. Tutti i diritti riservati.</span>
+      <a class="hover:text-gold-500" href="/privacy">Privacy</a>
     </p>
   </div>
 </footer>
