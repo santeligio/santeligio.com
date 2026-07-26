@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /*
   Palette scelta per una confraternita storica:
@@ -8,9 +8,9 @@
   - "parchment" sfondo color pergamena
 */
 @theme {
-  --font-serif: 'Georgia', 'Cambria', 'Times New Roman', serif;
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
-    sans-serif;
+  --font-serif: "Georgia", "Cambria", "Times New Roman", serif;
+  --font-sans:
+    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   --color-parchment-50: #fdfbf6;
   --color-parchment-100: #f7f1e3;
@@ -24,6 +24,11 @@
   --color-wine-700: #74232f;
   --color-wine-800: #5c1b26;
 
+  /*
+    gold-400 esiste per gli stati :hover dei pulsanti oro, che portano testo
+    scuro: schiarire lo sfondo aumenta il contrasto, scurirlo lo riduce.
+  */
+  --color-gold-400: #c99a3d;
   --color-gold-500: #b8892b;
   --color-gold-600: #9c7220;
 }
@@ -52,6 +57,33 @@
   h4 {
     font-family: var(--font-serif);
     color: var(--color-ink-900);
+  }
+
+  /*
+    Indicatore di focus esplicito. L'oro è l'unico colore della palette che
+    supera il rapporto 3:1 sia sullo sfondo chiaro (3.05:1 su parchment-50)
+    sia su quello scuro di hero e footer (5.59:1 su ink-900), quindi una sola
+    regola copre tutte le pagine. L'offset tiene l'anello sullo sfondo della
+    pagina invece che sulla superficie colorata dei pulsanti.
+  */
+  :focus-visible {
+    outline: 3px solid var(--color-gold-500);
+    outline-offset: 2px;
+  }
+}
+
+/* Rispetta la preferenza di sistema per il movimento ridotto. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

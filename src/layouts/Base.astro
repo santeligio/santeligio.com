@@ -56,9 +56,15 @@ const imageUrl = new URL(image, SITE.url).href;
     }
   </head>
   <body class="flex min-h-screen flex-col">
+    <a
+      href="#contenuto"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-parchment-50 focus:px-4 focus:py-2 focus:text-wine-700 focus:shadow-md"
+    >
+      Salta al contenuto
+    </a>
     <TranslationHint />
     <Header />
-    <main class="flex-1">
+    <main id="contenuto" class="flex-1" tabindex="-1">
       <slot />
     </main>
     <Footer />
