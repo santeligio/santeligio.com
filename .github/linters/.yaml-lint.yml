@@ -1,0 +1,10 @@
+extends: default
+
+rules:
+  document-start: disable
+  line-length:
+    max: 120
+  truthy:
+    # GitHub Actions workflows use unquoted `on:` triggers, which yamllint's
+    # default truthy check otherwise flags as an implicit boolean key.
+    check-keys: false
