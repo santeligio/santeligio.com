@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to AI coding agents when working with code in this repository.
 
 ## Project overview
 
@@ -35,7 +35,7 @@ There is no test suite and no local lint script in `package.json`. Linting runs 
 - **Layout**: `src/layouts/Base.astro` is the single shared HTML shell — head/meta/OG tags, canonical URL,
   sitemap link, and `Header`/`TranslationHint`/`Footer` wrapping a `<slot />`. Every page composes itself as
   `<Base>...</Base>` plus components from `src/components/`.
-- **Site constants**: `src/consts.ts` holds `SITE` (url, title, description, lang, email) and `NAV` (the header
+- **Site constants**: `src/consts.ts` holds `SITE` (URL, title, description, lang, email) and `NAV` (the header
   nav items) — update these rather than hardcoding site metadata elsewhere.
 - **Styling**: Tailwind CSS v4 via the `@tailwindcss/vite` plugin (no `tailwind.config.*` — v4 is configured in
   CSS). Theme tokens (fonts, colors) are declared with `@theme` in `src/styles/global.css`: a historical-society
@@ -54,6 +54,6 @@ There is no test suite and no local lint script in `package.json`. Linting runs 
 ## Content editing notes
 
 - New news posts: add a `.md` file under `src/content/news/` with `title`, `date`, and `category` frontmatter.
-- **Privacy rule** (from README): historical/archival material is publishable; living members are named only
+- **Privacy rule** (from readme): historical/archival material is publishable; living members are named only
   with their consent. Keep this in mind when adding or editing content that names people.
 - Static assets (images, `_redirects`, `_headers`) live under `public/`.

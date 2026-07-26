@@ -26,4 +26,8 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: false
-          FILTER_REGEX_EXCLUDE: (^|/)package-lock\.json$
+          # - devcontainer.json intentionally uses JSONC (inline comments), which
+          #   trips the strict JSON/JSON_PRETTIER linters.
+          # - CLAUDE.md is a symlink to AGENTS.md, not distinct content; without
+          #   this it reads as a 100%-duplicate file to jscpd.
+          FILTER_REGEX_EXCLUDE: (^|/)package-lock\.json$|(^|/)\.devcontainer/devcontainer\.json$|(^|/)CLAUDE\.md$
