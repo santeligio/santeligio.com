@@ -3,6 +3,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
+                "Anthropic.claude-code",                // Claude Code for VS Code by Anthropic
                 "george-alisson.html-preview-vscode",
                 "GitHub.vscode-pull-request-github",
                 "juggernautjp.less-toml",
