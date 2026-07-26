@@ -1,5 +1,6 @@
 # build output
 dist/
+
 # generated Astro types
 .astro/
 
@@ -21,3 +22,8 @@ pnpm-debug.log*
 
 # local Netlify folder
 .netlify
+
+# Other folders
+.cache/
+
+# EOF

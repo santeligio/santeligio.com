@@ -1,0 +1,6 @@
+# News posts start with YAML frontmatter (no leading H1) and Italian prose
+# paragraphs are written as single long lines by design, so those two rules
+# are disabled rather than reformatted to fit arbitrary limits.
+default: true
+MD013: false
+MD041: false
