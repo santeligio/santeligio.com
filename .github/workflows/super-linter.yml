@@ -26,6 +26,13 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: false
+          # ts-standard enforces standard style, which mandates no semicolons
+          # and no trailing commas. This codebase uses both, and super-linter
+          # also runs Prettier (TYPESCRIPT_PRETTIER), which actively adds them,
+          # so the two linters can never both pass. It also fails to parse the
+          # project at all, reporting errors in files a pull request never
+          # touched. TYPESCRIPT_ES already covers linting.
+          VALIDATE_TYPESCRIPT_STANDARD: false
           # - devcontainer.json intentionally uses JSONC (inline comments), which
           #   trips the strict JSON/JSON_PRETTIER linters.
           # - CLAUDE.md is a symlink to AGENTS.md, not distinct content; without
