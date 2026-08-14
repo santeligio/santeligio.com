@@ -3,59 +3,69 @@ import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import { Image, getImage } from 'astro:assets';
 
-// v1: gallery is wired but sparse — filling it with scanned slides and event
-// photos is out of scope for this issue (see santeligio.com#30, phase 2).
-//
 // The grid thumbnails and the enlarged view are generated at build time by
 // astro:assets. The originals stay under public/ because other pages reference
 // them by URL (Base.astro's default OG image, the Hero backgrounds, the news
 // covers), so importing them here derives every size from a single source of
 // truth rather than keeping a second copy of ~6.6 MB of photos under src/.
-import foto1900 from '../../public/santeligio/santeligio_1900.jpg';
-import convenzione1858 from '../../public/santeligio/20190818-convenzione-1858-pag1.jpg';
-import gruppo2024 from '../../public/santeligio/2024-07-07-foto-gruppo-compagnia.jpg';
-import registro2023 from '../../public/santeligio/santeligio_2023.jpg';
-import nov2023a from '../../public/santeligio/20231125-142120.jpg';
-import nov2023b from '../../public/santeligio/20231125-142205.jpg';
-import giugno2024 from '../../public/santeligio/wa-2024-06-10-133426-1.jpeg';
+//
+// Every image in public/santeligio/ is discovered automatically, so a photo
+// added there can never silently go missing from the gallery — which is how
+// the July 2025 and July 2026 group photos ended up unlisted.
+const files = import.meta.glob<{ default: ImageMetadata }>(
+  '../../public/santeligio/*.{jpg,jpeg,png,webp,avif}',
+  { eager: true },
+);
+const byName = new Map(
+  Object.entries(files).map(([path, mod]) => [path.split('/').pop(), mod.default]),
+);
 
-const images = [
+// Curated order and descriptions. Anything on disk but not listed here is
+// appended below with a generic description, rather than dropped.
+const captions = [
+  { file: 'santeligio_1900.jpg', alt: 'Fotografia storica della Compagnia, 1900 circa' },
+  { file: '20190818-convenzione-1858-pag1.jpg', alt: 'Pagina della Convenzione del 1858' },
+  { file: 'santeligio_2023.jpg', alt: 'Registro della Compagnia, edizione 2023' },
   {
-    src: foto1900,
-    original: '/santeligio/santeligio_1900.jpg',
-    alt: 'Fotografia storica della Compagnia, 1900 circa',
-  },
-  {
-    src: convenzione1858,
-    original: '/santeligio/20190818-convenzione-1858-pag1.jpg',
-    alt: 'Pagina della Convenzione del 1858',
-  },
-  {
-    src: gruppo2024,
-    original: '/santeligio/2024-07-07-foto-gruppo-compagnia.jpg',
-    alt: 'Foto di gruppo dei Soci, luglio 2024',
-  },
-  {
-    src: registro2023,
-    original: '/santeligio/santeligio_2023.jpg',
-    alt: 'Registro della Compagnia, edizione 2023',
-  },
-  {
-    src: nov2023a,
-    original: '/santeligio/20231125-142120.jpg',
+    file: '20231125-142120.jpg',
     alt: 'Momento di vita della Compagnia, novembre 2023',
   },
   {
-    src: nov2023b,
-    original: '/santeligio/20231125-142205.jpg',
+    file: '20231125-142205.jpg',
     alt: 'Momento di vita della Compagnia, novembre 2023',
   },
+  { file: 'wa-2024-06-10-133426-1.jpeg', alt: 'Foto della Compagnia, giugno 2024' },
   {
-    src: giugno2024,
-    original: '/santeligio/wa-2024-06-10-133426-1.jpeg',
-    alt: 'Foto della Compagnia, giugno 2024',
+    file: '2024-07-07-foto-gruppo-compagnia.jpg',
+    alt: 'Foto di gruppo dei Soci della Compagnia, luglio 2024',
+  },
+  {
+    file: '2025-07-13-foto-gruppo-compagnia.jpg',
+    alt: 'Foto di gruppo dei Soci della Compagnia, luglio 2025',
+  },
+  {
+    file: '2026-07-12-foto-gruppo-compagnia.jpg',
+    alt: 'Foto di gruppo dei Soci della Compagnia, luglio 2026',
   },
 ];
+
+const described = new Set(captions.map((c) => c.file));
+const undescribed = [...byName.keys()]
+  .filter((file) => !described.has(file))
+  .sort()
+  .map((file) => ({
+    file,
+    alt: "Fotografia dell'archivio della Compagnia di Sant'Eligio",
+  }));
+
+const images = [...captions, ...undescribed]
+  // Skip captions whose file has since been removed, so the build survives it.
+  .filter((entry) => byName.has(entry.file))
+  .map((entry) => ({
+    src: byName.get(entry.file)!,
+    original: `/santeligio/${entry.file}`,
+    alt: entry.alt,
+  }));
 
 // The enlarged view is a 1600px WebP rather than the raw original: plenty for
 // viewing, but a fraction of the weight on a slow connection. It is fetched
@@ -88,10 +98,11 @@ const gallery = await Promise.all(
     </p>
     <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
       {
-        gallery.map((img) => (
+        gallery.map((img, i) => (
           <a
             href={img.large.src}
             data-lightbox
+            data-index={i}
             data-alt={img.alt}
             data-original={img.original}
             class="block rounded-lg"
@@ -120,27 +131,58 @@ const gallery = await Promise.all(
     real links, so without JavaScript (or without <dialog> support) they simply
     open the enlarged image instead.
   -->
+  <!--
+    A full-viewport dark stage rather than a panel sized to the photo: the
+    photos have very different aspect ratios, and anything smaller either jumps
+    around as you page through them or leaves large empty bands around the
+    portrait ones.
+  -->
   <dialog
     id="lightbox"
     aria-label="Immagine ingrandita"
-    class="m-auto max-h-[92vh] max-w-[95vw] rounded-lg bg-parchment-50 p-0 backdrop:bg-ink-900/80"
+    class="m-0 h-dvh max-h-none w-screen max-w-none bg-ink-900/95 p-0 backdrop:bg-ink-900/80"
   >
-    <div class="flex justify-end p-2">
-      <button
-        type="button"
-        id="lightbox-close"
-        autofocus
-        class="rounded px-3 py-1 text-ink-800 hover:bg-parchment-200"
-      >
-        <span aria-hidden="true">✕</span><span class="sr-only">Chiudi</span>
-      </button>
+    <div class="flex h-full flex-col">
+      <div class="flex items-center justify-between gap-2 p-2">
+        <p id="lightbox-counter" aria-live="polite" class="px-2 text-sm text-parchment-100"></p>
+        <button
+          type="button"
+          id="lightbox-close"
+          autofocus
+          class="grid h-11 w-11 place-items-center rounded text-xl text-parchment-50 hover:bg-parchment-50/20"
+        >
+          <span aria-hidden="true">✕</span><span class="sr-only">Chiudi</span>
+        </button>
+      </div>
+
+      <div class="relative flex min-h-0 flex-1 items-center justify-center px-2">
+        <img
+          id="lightbox-img"
+          alt=""
+          class="max-h-full max-w-full object-contain transition-opacity duration-200 data-[loading]:opacity-40"
+        />
+        <button
+          type="button"
+          id="lightbox-prev"
+          class="absolute left-2 grid h-11 w-11 place-items-center rounded-full bg-parchment-50/90 text-2xl text-ink-900 shadow hover:bg-parchment-50"
+        >
+          <span aria-hidden="true">‹</span><span class="sr-only">Immagine precedente</span>
+        </button>
+        <button
+          type="button"
+          id="lightbox-next"
+          class="absolute right-2 grid h-11 w-11 place-items-center rounded-full bg-parchment-50/90 text-2xl text-ink-900 shadow hover:bg-parchment-50"
+        >
+          <span aria-hidden="true">›</span><span class="sr-only">Immagine successiva</span>
+        </button>
+      </div>
+
+      <p class="px-4 py-3 text-sm">
+        <a id="lightbox-original" class="text-parchment-100 underline" href="">
+          Apri l'immagine originale
+        </a>
+      </p>
     </div>
-    <img id="lightbox-img" alt="" class="block max-h-[74vh] w-auto max-w-full" />
-    <p class="px-4 py-3 text-sm">
-      <a id="lightbox-original" class="text-wine-700 underline" href="">
-        Apri l'immagine originale
-      </a>
-    </p>
   </dialog>
 
   <script is:inline>
@@ -151,22 +193,60 @@ const gallery = await Promise.all(
 
       var img = document.getElementById('lightbox-img');
       var original = document.getElementById('lightbox-original');
+      var counter = document.getElementById('lightbox-counter');
       var close = document.getElementById('lightbox-close');
+      var prev = document.getElementById('lightbox-prev');
+      var next = document.getElementById('lightbox-next');
 
-      Array.prototype.forEach.call(
-        document.querySelectorAll('a[data-lightbox]'),
-        function (link) {
-          link.addEventListener('click', function (ev) {
-            // Let modified clicks (new tab, download, middle-click) behave normally.
-            if (ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
-            ev.preventDefault();
-            img.src = link.getAttribute('href');
-            img.alt = link.getAttribute('data-alt') || '';
-            original.href = link.getAttribute('data-original');
-            dlg.showModal();
-          });
-        },
-      );
+      var links = Array.prototype.slice.call(document.querySelectorAll('a[data-lightbox]'));
+      if (!links.length) return;
+      var current = 0;
+
+      function show(i) {
+        // Wrap around, so neither end is a dead stop.
+        current = (i + links.length) % links.length;
+        var link = links[current];
+        // Dim while the next photo arrives — noticeable on a slow connection.
+        img.dataset.loading = '';
+        img.addEventListener(
+          'load',
+          function () {
+            delete img.dataset.loading;
+          },
+          { once: true },
+        );
+        img.src = link.getAttribute('href');
+        img.alt = link.getAttribute('data-alt') || '';
+        original.href = link.getAttribute('data-original');
+        counter.textContent = current + 1 + ' di ' + links.length;
+      }
+
+      links.forEach(function (link, i) {
+        link.addEventListener('click', function (ev) {
+          // Let modified clicks (new tab, download, middle-click) behave normally.
+          if (ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+          ev.preventDefault();
+          show(i);
+          dlg.showModal();
+        });
+      });
+
+      prev.addEventListener('click', function () {
+        show(current - 1);
+      });
+      next.addEventListener('click', function () {
+        show(current + 1);
+      });
+
+      dlg.addEventListener('keydown', function (ev) {
+        if (ev.key === 'ArrowLeft') {
+          ev.preventDefault();
+          show(current - 1);
+        } else if (ev.key === 'ArrowRight') {
+          ev.preventDefault();
+          show(current + 1);
+        }
+      });
 
       close.addEventListener('click', function () {
         dlg.close();
@@ -175,10 +255,13 @@ const gallery = await Promise.all(
       dlg.addEventListener('click', function (ev) {
         if (ev.target === dlg) dlg.close();
       });
-      // Drop the decoded image once closed so it is not held in memory.
+      // Return focus to the thumbnail actually being viewed, which may not be
+      // the one that opened the dialog, then drop the decoded image.
       dlg.addEventListener('close', function () {
         img.removeAttribute('src');
         img.alt = '';
+        delete img.dataset.loading;
+        links[current].focus();
       });
     })();
   </script>
