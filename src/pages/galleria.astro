@@ -1,36 +1,51 @@
 ---
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
+import { Image } from 'astro:assets';
 
 // v1: gallery is wired but sparse — filling it with scanned slides and event
 // photos is out of scope for this issue (see santeligio.com#30, phase 2).
+//
+// The grid thumbnails are generated at build time by astro:assets. The
+// originals stay under public/ because other pages reference them by URL
+// (Base.astro's default OG image, the Hero backgrounds, the news covers), so
+// importing them here derives thumbnails from a single source of truth rather
+// than keeping a second copy of ~6.6 MB of photos under src/.
+import foto1900 from '../../public/santeligio/santeligio_1900.jpg';
+import convenzione1858 from '../../public/santeligio/20190818-convenzione-1858-pag1.jpg';
+import gruppo2024 from '../../public/santeligio/2024-07-07-foto-gruppo-compagnia.jpg';
+import registro2023 from '../../public/santeligio/santeligio_2023.jpg';
+import nov2023a from '../../public/santeligio/20231125-142120.jpg';
+import nov2023b from '../../public/santeligio/20231125-142205.jpg';
+import giugno2024 from '../../public/santeligio/wa-2024-06-10-133426-1.jpeg';
+
 const images = [
   {
-    src: '/santeligio/santeligio_1900.jpg',
-    alt: "Fotografia storica della Compagnia, 1900 circa",
+    src: foto1900,
+    alt: 'Fotografia storica della Compagnia, 1900 circa',
   },
   {
-    src: '/santeligio/20190818-convenzione-1858-pag1.jpg',
+    src: convenzione1858,
     alt: 'Pagina della Convenzione del 1858',
   },
   {
-    src: '/santeligio/2024-07-07-foto-gruppo-compagnia.jpg',
+    src: gruppo2024,
     alt: 'Foto di gruppo dei Soci, luglio 2024',
   },
   {
-    src: '/santeligio/santeligio_2023.jpg',
+    src: registro2023,
     alt: 'Registro della Compagnia, edizione 2023',
   },
   {
-    src: '/santeligio/20231125-142120.jpg',
-    alt: "Momento di vita della Compagnia, novembre 2023",
+    src: nov2023a,
+    alt: 'Momento di vita della Compagnia, novembre 2023',
   },
   {
-    src: '/santeligio/20231125-142205.jpg',
-    alt: "Momento di vita della Compagnia, novembre 2023",
+    src: nov2023b,
+    alt: 'Momento di vita della Compagnia, novembre 2023',
   },
   {
-    src: '/santeligio/wa-2024-06-10-133426-1.jpeg',
+    src: giugno2024,
     alt: 'Foto della Compagnia, giugno 2024',
   },
 ];
@@ -51,11 +66,17 @@ const images = [
     <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
       {
         images.map((img) => (
-          <img
+          <Image
             src={img.src}
             alt={img.alt}
+            widths={[320, 640]}
+            width={640}
+            sizes="(min-width: 640px) 320px, 50vw"
+            format="webp"
+            quality="mid"
             class="aspect-square w-full rounded-lg object-cover"
             loading="lazy"
+            decoding="async"
           />
         ))
       }
