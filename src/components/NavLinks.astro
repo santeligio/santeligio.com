@@ -1,0 +1,29 @@
+---
+import { NAV } from '../consts';
+
+// The <li> items shared by the mobile disclosure menu and the desktop nav bar
+// in Header.astro. They are rendered into two separate <ul>s because a closed
+// <details> contributes no intrinsic width, which collapses its container and
+// pushes the desktop list off-screen.
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href: string) =>
+  href === '/' ? pathname === '/' : pathname.startsWith(href);
+---
+
+{
+  NAV.map((item) => (
+    <li>
+      <a
+        href={item.href}
+        aria-current={isActive(item.href) ? 'page' : undefined}
+        class:list={[
+          'block py-2 text-ink-700 hover:text-wine-700 sm:py-0',
+          isActive(item.href) &&
+            'font-semibold text-wine-700 underline decoration-gold-500 underline-offset-4',
+        ]}
+      >
+        {item.label}
+      </a>
+    </li>
+  ))
+}
