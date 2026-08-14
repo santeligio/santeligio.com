@@ -1,16 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 
 // v1: gallery is wired but sparse — filling it with scanned slides and event
 // photos is out of scope for this issue (see santeligio.com#30, phase 2).
 //
-// The grid thumbnails are generated at build time by astro:assets. The
-// originals stay under public/ because other pages reference them by URL
-// (Base.astro's default OG image, the Hero backgrounds, the news covers), so
-// importing them here derives thumbnails from a single source of truth rather
-// than keeping a second copy of ~6.6 MB of photos under src/.
+// The grid thumbnails and the enlarged view are generated at build time by
+// astro:assets. The originals stay under public/ because other pages reference
+// them by URL (Base.astro's default OG image, the Hero backgrounds, the news
+// covers), so importing them here derives every size from a single source of
+// truth rather than keeping a second copy of ~6.6 MB of photos under src/.
 import foto1900 from '../../public/santeligio/santeligio_1900.jpg';
 import convenzione1858 from '../../public/santeligio/20190818-convenzione-1858-pag1.jpg';
 import gruppo2024 from '../../public/santeligio/2024-07-07-foto-gruppo-compagnia.jpg';
@@ -22,33 +22,56 @@ import giugno2024 from '../../public/santeligio/wa-2024-06-10-133426-1.jpeg';
 const images = [
   {
     src: foto1900,
+    original: '/santeligio/santeligio_1900.jpg',
     alt: 'Fotografia storica della Compagnia, 1900 circa',
   },
   {
     src: convenzione1858,
+    original: '/santeligio/20190818-convenzione-1858-pag1.jpg',
     alt: 'Pagina della Convenzione del 1858',
   },
   {
     src: gruppo2024,
+    original: '/santeligio/2024-07-07-foto-gruppo-compagnia.jpg',
     alt: 'Foto di gruppo dei Soci, luglio 2024',
   },
   {
     src: registro2023,
+    original: '/santeligio/santeligio_2023.jpg',
     alt: 'Registro della Compagnia, edizione 2023',
   },
   {
     src: nov2023a,
+    original: '/santeligio/20231125-142120.jpg',
     alt: 'Momento di vita della Compagnia, novembre 2023',
   },
   {
     src: nov2023b,
+    original: '/santeligio/20231125-142205.jpg',
     alt: 'Momento di vita della Compagnia, novembre 2023',
   },
   {
     src: giugno2024,
+    original: '/santeligio/wa-2024-06-10-133426-1.jpeg',
     alt: 'Foto della Compagnia, giugno 2024',
   },
 ];
+
+// The enlarged view is a 1600px WebP rather than the raw original: plenty for
+// viewing, but a fraction of the weight on a slow connection. It is fetched
+// only when a thumbnail is activated, never on page load. The raw original
+// stays one click further away, for anyone who wants the full scan.
+const gallery = await Promise.all(
+  images.map(async (img) => ({
+    ...img,
+    large: await getImage({
+      src: img.src,
+      width: 1600,
+      format: 'webp',
+      quality: 'mid',
+    }),
+  })),
+);
 ---
 
 <Base
@@ -65,21 +88,98 @@ const images = [
     </p>
     <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
       {
-        images.map((img) => (
-          <Image
-            src={img.src}
-            alt={img.alt}
-            widths={[320, 640]}
-            width={640}
-            sizes="(min-width: 640px) 320px, 50vw"
-            format="webp"
-            quality="mid"
-            class="aspect-square w-full rounded-lg object-cover"
-            loading="lazy"
-            decoding="async"
-          />
+        gallery.map((img) => (
+          <a
+            href={img.large.src}
+            data-lightbox
+            data-alt={img.alt}
+            data-original={img.original}
+            class="block rounded-lg"
+          >
+            <Image
+              src={img.src}
+              alt={img.alt}
+              widths={[320, 640]}
+              width={640}
+              sizes="(min-width: 640px) 320px, 50vw"
+              format="webp"
+              quality="mid"
+              class="aspect-square w-full rounded-lg object-cover transition hover:opacity-90"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
         ))
       }
     </div>
   </section>
+
+  <!--
+    Enlarged view. Native <dialog> so the browser handles focus trapping,
+    Escape-to-close and returning focus to the thumbnail. The thumbnails stay
+    real links, so without JavaScript (or without <dialog> support) they simply
+    open the enlarged image instead.
+  -->
+  <dialog
+    id="lightbox"
+    aria-label="Immagine ingrandita"
+    class="m-auto max-h-[92vh] max-w-[95vw] rounded-lg bg-parchment-50 p-0 backdrop:bg-ink-900/80"
+  >
+    <div class="flex justify-end p-2">
+      <button
+        type="button"
+        id="lightbox-close"
+        autofocus
+        class="rounded px-3 py-1 text-ink-800 hover:bg-parchment-200"
+      >
+        <span aria-hidden="true">✕</span><span class="sr-only">Chiudi</span>
+      </button>
+    </div>
+    <img id="lightbox-img" alt="" class="block max-h-[74vh] w-auto max-w-full" />
+    <p class="px-4 py-3 text-sm">
+      <a id="lightbox-original" class="text-wine-700 underline" href="">
+        Apri l'immagine originale
+      </a>
+    </p>
+  </dialog>
+
+  <script is:inline>
+    (function () {
+      var dlg = document.getElementById('lightbox');
+      // Without <dialog> support the thumbnails keep working as plain links.
+      if (!dlg || typeof dlg.showModal !== 'function') return;
+
+      var img = document.getElementById('lightbox-img');
+      var original = document.getElementById('lightbox-original');
+      var close = document.getElementById('lightbox-close');
+
+      Array.prototype.forEach.call(
+        document.querySelectorAll('a[data-lightbox]'),
+        function (link) {
+          link.addEventListener('click', function (ev) {
+            // Let modified clicks (new tab, download, middle-click) behave normally.
+            if (ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+            ev.preventDefault();
+            img.src = link.getAttribute('href');
+            img.alt = link.getAttribute('data-alt') || '';
+            original.href = link.getAttribute('data-original');
+            dlg.showModal();
+          });
+        },
+      );
+
+      close.addEventListener('click', function () {
+        dlg.close();
+      });
+      // A click landing on the dialog itself is a click on the backdrop.
+      dlg.addEventListener('click', function (ev) {
+        if (ev.target === dlg) dlg.close();
+      });
+      // Drop the decoded image once closed so it is not held in memory.
+      dlg.addEventListener('close', function () {
+        img.removeAttribute('src');
+        img.alt = '';
+      });
+    })();
+  </script>
 </Base>
