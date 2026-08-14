@@ -12,6 +12,7 @@ export const SITE = {
 export const NAV = [
   { label: 'Home', href: '/' },
   { label: 'Storia', href: '/storia' },
+  { label: 'La Baja', href: '/baja' },
   { label: 'News', href: '/news' },
   { label: 'Galleria', href: '/galleria' },
   { label: 'Contatti', href: '/contatti' },
