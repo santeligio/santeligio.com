@@ -2,6 +2,14 @@
 # Config for super-linter's TYPESCRIPT_ES / JAVASCRIPT_ES (eslint 8, eslintrc
 # format). The workflow points at this file explicitly via
 # TYPESCRIPT_ES_CONFIG_FILE so it cannot silently fall back to the default.
+#
+# Providing this file replaces super-linter's own TYPESCRIPT_ES config
+# wholesale rather than layering on top of it, so `parser` has to be restated
+# here too — omitting it silently falls back to the plain JS parser (espree),
+# which cannot read `as const`, `import type`, or `type X = ...` and reports
+# them as syntax errors instead of the actual TypeScript.
+parser: '@typescript-eslint/parser'
+
 env:
   browser: true
   es2022: true
@@ -17,4 +25,4 @@ rules:
   # built by Astro/Vite and type-checked by TypeScript, both of which resolve
   # them; adding a .js extension that no file on disk has would satisfy the
   # rule while making the imports less accurate, not more.
-  n/no-missing-import: off
+  n/no-missing-import: 'off'
