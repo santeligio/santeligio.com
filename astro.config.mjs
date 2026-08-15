@@ -12,14 +12,14 @@ export default defineConfig({
   // languages live under /en/ and /fr/.
   i18n: {
     defaultLocale: 'it',
-    locales: ['it', 'en'],
+    locales: ['it', 'en', 'fr'],
     routing: { prefixDefaultLocale: false },
   },
   integrations: [
     sitemap({
       i18n: {
         defaultLocale: 'it',
-        locales: { it: 'it-IT', en: 'en' },
+        locales: { it: 'it-IT', en: 'en', fr: 'fr-FR' },
       },
     }),
   ],

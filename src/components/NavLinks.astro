@@ -26,7 +26,7 @@ const isActive = (href: string) => {
         href={localePath(item.href, lang)}
         aria-current={isActive(item.href) ? 'page' : undefined}
         class:list={[
-          'block py-2 text-ink-700 hover:text-wine-700 md:py-0',
+          'block py-2 text-ink-700 hover:text-wine-700 lg:py-0',
           isActive(item.href) &&
             'font-semibold text-wine-700 underline decoration-gold-500 underline-offset-4',
         ]}
