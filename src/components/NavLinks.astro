@@ -1,28 +1,37 @@
 ---
 import { NAV } from '../consts';
+import { localeFromUrl, localePath, useTranslations } from '../i18n';
 
 // The <li> items shared by the mobile disclosure menu and the desktop nav bar
 // in Header.astro. They are rendered into two separate <ul>s because a closed
 // <details> contributes no intrinsic width, which collapses its container and
 // pushes the desktop list off-screen.
+const lang = localeFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
-const isActive = (href: string) =>
-  href === '/' ? pathname === '/' : pathname.startsWith(href);
+// The locale root is /en, not /, so Home has to match exactly: a startsWith
+// test would mark it active on every page under /en/.
+const localeRoot = localePath('/', lang).replace(/\/$/, '') || '/';
+const isActive = (href: string) => {
+  if (href === '/') return pathname === localeRoot;
+  return pathname.startsWith(localePath(href, lang).replace(/\/$/, ''));
+};
 ---
 
 {
   NAV.map((item) => (
     <li>
       <a
-        href={item.href}
+        href={localePath(item.href, lang)}
         aria-current={isActive(item.href) ? 'page' : undefined}
         class:list={[
-          'block py-2 text-ink-700 hover:text-wine-700 sm:py-0',
+          'block py-2 text-ink-700 hover:text-wine-700 md:py-0',
           isActive(item.href) &&
             'font-semibold text-wine-700 underline decoration-gold-500 underline-offset-4',
         ]}
       >
-        {item.label}
+        {t.nav[item.key]}
       </a>
     </li>
   ))

@@ -1,5 +1,9 @@
 ---
 import { NAV, SITE } from '../consts';
+import { localeFromUrl, localePath, useTranslations } from '../i18n';
+
+const lang = localeFromUrl(Astro.url);
+const t = useTranslations(lang);
 const year = new Date().getFullYear();
 ---
 
@@ -10,20 +14,20 @@ const year = new Date().getFullYear();
     <div>
       <h2 class="font-serif text-lg text-parchment-50">{SITE.title}</h2>
       <p class="mt-2 max-w-xs text-sm text-parchment-200">
-        Vernante (CN) — una lunga storia che ci piace ricordare.
+        {t.ui.footerTagline}
       </p>
     </div>
 
-    <nav aria-label="Navigazione footer">
+    <nav aria-label={t.ui.footerNav}>
       <h2 class="font-serif text-sm uppercase tracking-wide text-gold-500">
-        Pagine
+        {t.ui.footerPages}
       </h2>
       <ul class="mt-2 space-y-1 text-sm">
         {
           NAV.map((item) => (
             <li>
-              <a class="hover:text-gold-500" href={item.href}>
-                {item.label}
+              <a class="hover:text-gold-500" href={localePath(item.href, lang)}>
+                {t.nav[item.key]}
               </a>
             </li>
           ))
@@ -33,7 +37,7 @@ const year = new Date().getFullYear();
 
     <div>
       <h2 class="font-serif text-sm uppercase tracking-wide text-gold-500">
-        Contatti
+        {t.ui.footerContacts}
       </h2>
       <p class="mt-2 text-sm">
         <a class="hover:text-gold-500" href={`mailto:${SITE.email}`}>
@@ -47,8 +51,10 @@ const year = new Date().getFullYear();
     <p
       class="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 px-4 py-4 text-xs text-parchment-200"
     >
-      <span>© 2023–{year} Compagnia di Sant'Eligio. Tutti i diritti riservati.</span>
-      <a class="hover:text-gold-500" href="/privacy">Privacy</a>
+      <span>© 2023–{year} Compagnia di Sant'Eligio. {t.ui.rightsReserved}</span>
+      <a class="hover:text-gold-500" href={localePath('/privacy', lang)}>
+        {t.ui.privacy}
+      </a>
     </p>
   </div>
 </footer>

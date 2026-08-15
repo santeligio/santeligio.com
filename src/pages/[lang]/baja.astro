@@ -1,0 +1,12 @@
+---
+import Baja from '../../components/pages/Baja.astro';
+import { LOCALES, DEFAULT_LOCALE } from '../../i18n';
+
+export function getStaticPaths() {
+  return LOCALES.filter((lang) => lang !== DEFAULT_LOCALE).map((lang) => ({
+    params: { lang },
+  }));
+}
+---
+
+<Baja />

@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../Hero.astro';
+import { localeFromUrl, localePath, useTranslations } from '../../i18n';
+
+const lang = localeFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Base>
+  <Hero
+    image="/santeligio/santeligio_1900.jpg"
+    imageAlt={t.home.heroAlt}
+    title={t.home.heroTitle}
+    subtitle={t.home.heroSubtitle}
+    ctaText={t.home.cta}
+    ctaHref={localePath('/storia', lang)}
+  />
+
+  <section class="mx-auto max-w-3xl px-4 py-16 text-center">
+    <blockquote class="font-serif text-2xl italic text-ink-900">
+      {t.home.quote}
+    </blockquote>
+  </section>
+
+  <section class="bg-parchment-100">
+    <div
+      class="relative isolate mx-auto flex max-w-5xl flex-col items-start overflow-hidden px-4 py-20 text-parchment-50 sm:px-8"
+    >
+      <img
+        src="/santeligio/2024-07-07-foto-gruppo-compagnia.jpg"
+        alt={t.home.sociAlt}
+        class="absolute inset-0 -z-10 h-full w-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 -z-10 bg-ink-900/60"></div>
+      <h2 class="max-w-xl font-serif text-3xl text-parchment-50">
+        {t.home.sociTitle}
+      </h2>
+      <a
+        href={`${localePath('/storia', lang)}#soci`}
+        class="mt-6 inline-block rounded bg-gold-500 px-6 py-3 font-medium text-ink-900 transition hover:bg-gold-400"
+      >
+        {t.home.sociCta}
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-16 text-center">
+    <h2 class="font-serif text-2xl text-ink-900">{t.home.eventsTitle}</h2>
+    <p class="mt-4 text-lg text-ink-700">{t.home.eventsBody}</p>
+  </section>
+</Base>

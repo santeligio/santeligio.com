@@ -1,0 +1,64 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../Hero.astro';
+import { localeFromUrl, localePath, useTranslations } from '../../i18n';
+
+// The ceremony text is by Loretta Macario. The wording is hers: the formatting
+// is editorial, the names of the two Abbà that the original cited in brackets
+// are omitted, and the non-Italian versions are translations, marked as such.
+const lang = localeFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Base title={t.baja.metaTitle} description={t.baja.metaDescription}>
+  <Hero
+    compact
+    image="/santeligio/2026-07-12-foto-gruppo-compagnia.jpg"
+    imageAlt={t.baja.heroAlt}
+    title={t.baja.heroTitle}
+  />
+
+  <article class="prose-eligio mx-auto max-w-3xl px-4 py-12">
+    {t.baja.intro.map((paragraph) => <p>{paragraph}</p>)}
+
+    <hr class="my-10 border-parchment-200" />
+
+    <h2>{t.baja.textTitle}</h2>
+    <p class="text-sm text-ink-700">
+      {t.baja.byline} <b>{t.baja.author}</b>
+    </p>
+    {
+      t.baja.translationNote && (
+        <p class="text-sm italic text-ink-700">
+          {t.baja.translationNote}{' '}
+          <a href={localePath('/baja', 'it')} hreflang="it" lang="it">
+            Originale italiano
+          </a>
+          .
+        </p>
+      )
+    }
+
+    {t.baja.before.map((paragraph) => <p>{paragraph}</p>)}
+
+    <ul>
+      {
+        t.baja.items.map((item) => (
+          <li>
+            <b>{item.name}</b>: {item.text}
+          </li>
+        ))
+      }
+    </ul>
+
+    {t.baja.after.map((paragraph) => <p>{paragraph}</p>)}
+
+    <hr class="my-10 border-parchment-200" />
+
+    <p class="text-sm text-ink-700">
+      {t.baja.closingBefore}<a href={localePath('/storia', lang)}
+        >{t.baja.closingLink}</a
+      >{t.baja.closingAfter}
+    </p>
+  </article>
+</Base>

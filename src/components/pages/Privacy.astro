@@ -1,0 +1,52 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../Hero.astro';
+import { SITE } from '../../consts';
+import { localeFromUrl, useTranslations } from '../../i18n';
+
+const lang = localeFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Base title={t.privacy.metaTitle} description={t.privacy.metaDescription}>
+  <Hero
+    compact
+    image="/santeligio/santeligio_2023.jpg"
+    imageAlt=""
+    title={t.privacy.heroTitle}
+  />
+
+  <article class="prose-eligio mx-auto max-w-3xl px-4 py-12">
+    <p>{t.privacy.updated}</p>
+
+    <h2>{t.privacy.controllerTitle}</h2>
+    <p>
+      {t.privacy.controllerBody}
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    </p>
+
+    <h2>{t.privacy.dataTitle}</h2>
+    <p>{t.privacy.dataBody}</p>
+
+    <h2>{t.privacy.statsTitle}</h2>
+    <p>
+      {t.privacy.statsBefore}
+      <a
+        href="https://www.cloudflare.com/web-analytics/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Cloudflare Web Analytics
+      </a>{t.privacy.statsAfter}
+    </p>
+
+    <h2>{t.privacy.archiveTitle}</h2>
+    <p>{t.privacy.archiveBody}</p>
+
+    <h2>{t.privacy.rightsTitle}</h2>
+    <p>{t.privacy.rightsBody}</p>
+
+    <h2>{t.privacy.changesTitle}</h2>
+    <p>{t.privacy.changesBody}</p>
+  </article>
+</Base>

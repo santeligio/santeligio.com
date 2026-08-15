@@ -1,0 +1,45 @@
+---
+import {
+  LOCALES,
+  dictionaries,
+  localeFromUrl,
+  localePath,
+  useTranslations,
+} from '../i18n';
+
+const lang = localeFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// The registry posts under /news/<slug> exist in Italian only, so switching
+// language from one would land on a page that does not exist. Send those to the
+// localised News index instead of a 404.
+const path = Astro.url.pathname;
+const isItalianOnly = /^\/news\/.+/.test(path);
+const targetPath = isItalianOnly ? '/news' : path;
+
+const options = LOCALES.map((code) => ({
+  code,
+  label: dictionaries[code].label,
+  href: localePath(targetPath, code),
+  current: code === lang,
+}));
+---
+
+<nav aria-label={t.ui.language} class="flex items-center gap-1 text-sm">
+  {
+    options.map((option) => (
+      <a
+        href={option.href}
+        hreflang={dictionaries[option.code].htmlLang}
+        aria-current={option.current ? 'true' : undefined}
+        class:list={[
+          'rounded px-2 py-1 uppercase text-ink-700 hover:text-wine-700',
+          option.current && 'font-semibold text-wine-700',
+        ]}
+      >
+        <span aria-hidden="true">{option.code}</span>
+        <span class="sr-only">{option.label}</span>
+      </a>
+    ))
+  }
+</nav>
