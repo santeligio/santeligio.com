@@ -116,7 +116,7 @@ export const it = {
     after: [
       "Ed eccoci giunti al momento più importante e sacro della manifestazione. Sul sagrato della Chiesa, dopo la celebrazione della Messa, l'Abbà uscente e l'Abbà entrante si trovano faccia a faccia per il trapasso delle consegne.",
       "Nelle mani del nuovo Priore non passa solo un testimone, ma la storia stessa di Vernante. L'Abbà vecchio consegna ufficialmente al nuovo: le alabarde guarnite, simbolo dell'autorità e della guida della compagnia ed il registro della Compagnia, che custodisce i nomi di tutti coloro che hanno onorato questa carica negli anni. Con questo gesto, il testimone della tradizione è ufficialmente passato.",
-      'Subito dopo questo passaggio, un tempo la solennità lasciava spazio alla pura gioia popolare. Dalla piazzetta "La Mandulera" prendeva il via la tradizionale sfilata dei "cavalieri antichi". Un\'allegra e colorata parata che si snodava per le vie del paese, simulando quell\'antico "esercito popolare" che festeggiava la vittoria e la libertà ritrovata. Viva la Baja, viva la Compagnia di Sant\'Eligio e buon passaggio delle consegne a tutti!',
+      'Subito dopo questo passaggio, un tempo la solennità lasciava spazio alla pura gioia popolare. Dalla piazzetta "La Mandoulera" prendeva il via la tradizionale sfilata dei "cavalieri antichi". Un\'allegra e colorata parata che si snodava per le vie del paese, simulando quell\'antico "esercito popolare" che festeggiava la vittoria e la libertà ritrovata. Viva la Baja, viva la Compagnia di Sant\'Eligio e buon passaggio delle consegne a tutti!',
     ],
     closingBefore:
       "Il testo del passaggio delle consegne è di Loretta Macario, che ringraziamo. Per approfondire la storia della Compagnia e l'elenco dei Soci si veda la pagina ",
