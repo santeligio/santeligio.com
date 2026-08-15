@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../Hero.astro';
+import { SITE } from '../../consts';
+import { localeFromUrl, localePath, useTranslations } from '../../i18n';
+
+const lang = localeFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Base title={t.contatti.metaTitle} description={t.contatti.metaDescription}>
+  <Hero
+    compact
+    image="/santeligio/santeligio_2023.jpg"
+    imageAlt=""
+    title={t.contatti.heroTitle}
+  />
+
+  <section class="mx-auto max-w-2xl px-4 py-12">
+    <p class="text-ink-700">{t.contatti.intro}</p>
+    <p class="mt-2">
+      <a
+        class="text-lg font-semibold text-wine-700 hover:underline"
+        href={`mailto:${SITE.email}`}
+      >
+        {SITE.email}
+      </a>
+    </p>
+
+    <h2 class="mt-10 font-serif text-xl text-ink-900">
+      {t.contatti.privacyTitle}
+    </h2>
+    <p class="mt-2 text-ink-700">
+      {t.contatti.privacyBody}<a
+        class="text-wine-700 underline"
+        href={localePath('/privacy', lang)}>{t.contatti.privacyLink}</a
+      >.
+    </p>
+  </section>
+</Base>

@@ -1,0 +1,12 @@
+---
+import Privacy from '../../components/pages/Privacy.astro';
+import { LOCALES, DEFAULT_LOCALE } from '../../i18n';
+
+export function getStaticPaths() {
+  return LOCALES.filter((lang) => lang !== DEFAULT_LOCALE).map((lang) => ({
+    params: { lang },
+  }));
+}
+---
+
+<Privacy />

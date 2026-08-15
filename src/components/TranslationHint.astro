@@ -1,27 +1,59 @@
 ---
-// Dismissible hint inviting non-Italian readers to use their browser's
-// built-in translation. The site is authored only in Italian (no dual-language
-// authoring), so we point visitors to the tool their browser already has.
+// Dismissible hint for readers whose browser is not set to the language of the
+// page they landed on. When we publish their language it offers a link to that
+// translation; otherwise it falls back to suggesting the browser's own
+// translation, which is all we could offer before /en existed.
+import {
+  LOCALES,
+  dictionaries,
+  localeFromUrl,
+  localePath,
+  useTranslations,
+  fill,
+} from '../i18n';
+
+const lang = localeFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Where each language's version of this page lives, for the client script.
+const path = Astro.url.pathname;
+const targetPath = /^\/news\/.+/.test(path) ? '/news' : path;
+const available = LOCALES.filter((code) => code !== lang).map((code) => ({
+  code,
+  htmlLang: dictionaries[code].htmlLang,
+  label: dictionaries[code].label,
+  href: localePath(targetPath, code),
+  // Built per language so the offer is written in the language being offered.
+  message: fill(dictionaries[code].hint.available, {
+    lang: dictionaries[code].label,
+  }),
+  cta: fill(dictionaries[code].hint.switchTo, {
+    lang: dictionaries[code].label,
+  }),
+}));
 ---
 
 <div
   id="translation-hint"
   class="border-b border-parchment-200 bg-parchment-100 text-ink-700"
+  data-current={lang}
+  data-available={JSON.stringify(available)}
+  data-fallback={t.hint.fallback}
   hidden
 >
-  <div
-    class="mx-auto flex max-w-5xl items-center gap-3 px-4 py-2 text-sm"
-  >
+  <div class="mx-auto flex max-w-5xl items-center gap-3 px-4 py-2 text-sm">
     <span aria-hidden="true">🌐</span>
-    <p class="flex-1" lang="en">
-      This site is written in Italian. Use your browser's built-in translation
-      to read it in your language.
-    </p>
+    <p id="translation-hint-text" class="flex-1"></p>
+    <a
+      id="translation-hint-link"
+      class="rounded px-2 py-1 font-medium text-wine-700 underline"
+      href="/"
+      hidden></a>
     <button
       type="button"
       id="translation-hint-close"
       class="rounded px-2 py-1 text-ink-700 hover:bg-parchment-200"
-      aria-label="Chiudi"
+      aria-label={t.ui.close}
     >
       ✕
     </button>
@@ -30,18 +62,45 @@
 
 <script is:inline>
   (function () {
-    const KEY = 'se-translation-hint-dismissed';
-    const el = document.getElementById('translation-hint');
-    if (!el) return;
-    const lang = (navigator.language || '').toLowerCase();
-    const dismissed = localStorage.getItem(KEY) === '1';
-    // Show only to non-Italian browsers that haven't dismissed it.
-    if (!dismissed && !lang.startsWith('it')) {
-      el.hidden = false;
+    var KEY = 'se-translation-hint-dismissed';
+    var el = document.getElementById('translation-hint');
+    if (!el || localStorage.getItem(KEY) === '1') return;
+
+    var current = el.dataset.current;
+    var available = JSON.parse(el.dataset.available || '[]');
+    var browser = (navigator.language || '').toLowerCase();
+    var text = document.getElementById('translation-hint-text');
+    var link = document.getElementById('translation-hint-link');
+
+    // Already reading in their own language: nothing to suggest.
+    if (browser.indexOf(current) === 0) return;
+
+    var match = null;
+    for (var i = 0; i < available.length; i++) {
+      if (browser.indexOf(available[i].htmlLang) === 0) {
+        match = available[i];
+        break;
+      }
     }
-    const close = document.getElementById('translation-hint-close');
-    close &&
-      close.addEventListener('click', function () {
+
+    if (match) {
+      // We publish their language — offer it.
+      text.textContent = match.message;
+      text.lang = match.htmlLang;
+      link.textContent = match.cta;
+      link.href = match.href;
+      link.lang = match.htmlLang;
+      link.hidden = false;
+    } else {
+      // We do not — fall back to the browser's own translation.
+      text.textContent = el.dataset.fallback || '';
+      text.lang = 'en';
+    }
+    el.hidden = false;
+
+    document
+      .getElementById('translation-hint-close')
+      .addEventListener('click', function () {
         el.hidden = true;
         localStorage.setItem(KEY, '1');
       });

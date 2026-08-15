@@ -8,7 +8,21 @@ import { SITE } from './src/consts';
 // https://astro.build
 export default defineConfig({
   site: SITE.url,
-  integrations: [sitemap()],
+  // Italian stays unprefixed, so every existing URL keeps working; the other
+  // languages live under /en/ and /fr/.
+  i18n: {
+    defaultLocale: 'it',
+    locales: ['it', 'en'],
+    routing: { prefixDefaultLocale: false },
+  },
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'it',
+        locales: { it: 'it-IT', en: 'en' },
+      },
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

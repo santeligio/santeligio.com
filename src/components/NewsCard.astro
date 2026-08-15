@@ -1,4 +1,6 @@
 ---
+import { localeFromUrl, useTranslations } from '../i18n';
+
 interface Props {
   href: string;
   title: string;
@@ -12,7 +14,11 @@ interface Props {
 const { href, title, description, date, category, cover, coverAlt } =
   Astro.props;
 
-const dateLabel = new Intl.DateTimeFormat('it-IT', {
+// The News index is translated even though the posts themselves are not, so the
+// card's date follows the page's language.
+const t = useTranslations(localeFromUrl(Astro.url));
+
+const dateLabel = new Intl.DateTimeFormat(t.dateLocale, {
   day: 'numeric',
   month: 'long',
   year: 'numeric',

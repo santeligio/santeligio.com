@@ -1,18 +1,29 @@
 ---
 import Base from '../layouts/Base.astro';
+import { dictionaries } from '../i18n';
+
+// Netlify serves this one file for the whole site, whatever the URL, so it
+// cannot be per-locale like the other pages. It carries each language instead.
+const it = dictionaries.it;
+const others = [dictionaries.en];
 ---
 
-<Base title="Pagina non trovata">
+<Base title={it.notFound.metaTitle}>
   <section class="mx-auto max-w-2xl px-4 py-24 text-center">
-    <h1 class="font-serif text-4xl text-ink-900">Pagina non trovata</h1>
-    <p class="mt-4 text-ink-700">
-      La pagina che cercate non esiste più o è stata spostata.
-    </p>
+    <h1 class="font-serif text-4xl text-ink-900">{it.notFound.title}</h1>
+    <p class="mt-4 text-ink-700">{it.notFound.body}</p>
+    {
+      others.map((d) => (
+        <p class="mt-2 text-ink-700" lang={d.htmlLang}>
+          {d.notFound.body}
+        </p>
+      ))
+    }
     <a
       class="mt-8 inline-block rounded bg-wine-700 px-6 py-3 font-medium text-parchment-50 transition hover:bg-wine-800"
       href="/"
     >
-      Torna alla home
+      {it.notFound.cta}
     </a>
   </section>
 </Base>

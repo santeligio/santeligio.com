@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Hero from '../Hero.astro';
+import NewsCard from '../NewsCard.astro';
+import { localeFromUrl, useTranslations } from '../../i18n';
+
+const lang = localeFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const allNews = await getCollection('news', ({ data }) => !data.draft);
+const posts = allNews.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Base title={t.news.metaTitle} description={t.news.metaDescription}>
+  <Hero
+    compact
+    image="/santeligio/santeligio_2023.jpg"
+    imageAlt={t.news.heroAlt}
+    title={t.news.heroTitle}
+    subtitle={t.news.heroSubtitle}
+  />
+
+  <section class="mx-auto max-w-5xl px-4 py-12">
+    {
+      /* The posts are registry snapshots, largely lists of names, and are
+         published in Italian only — say so rather than let a reader wonder. */
+      t.news.italianOnly && (
+        <p class="mb-8 text-ink-700">{t.news.italianOnly}</p>
+      )
+    }
+    {
+      posts.length === 0 ? (
+        <p class="text-ink-700">{t.news.empty}</p>
+      ) : (
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <NewsCard
+              href={`/news/${post.id}`}
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              category={post.data.category}
+              cover={post.data.cover}
+              coverAlt={post.data.coverAlt}
+            />
+          ))}
+        </div>
+      )
+    }
+  </section>
+</Base>

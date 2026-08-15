@@ -1,6 +1,8 @@
 ---
 import { SITE } from '../consts';
 import NavLinks from './NavLinks.astro';
+import LangSwitcher from './LangSwitcher.astro';
+import { localeFromUrl, localePath, useTranslations } from '../i18n';
 
 // The mobile menu uses a native <details>/<summary> rather than a
 // checkbox+label hack: the summary is focusable and toggles on Enter/Space out
@@ -12,11 +14,13 @@ import NavLinks from './NavLinks.astro';
 // revealed by a breakpoint: a closed <details> contributes no intrinsic width,
 // so its container collapsed to 0 and the list overflowed off-screen. Only one
 // of the two is ever displayed, so assistive tech sees a single menu.
+const lang = localeFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header class="border-b border-parchment-200 bg-parchment-50">
-  <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
-    <a href="/" class="flex items-center gap-3">
+  <div class="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-4">
+    <a href={localePath('/', lang)} class="flex items-center gap-3">
       <span
         class="grid h-10 w-10 place-items-center rounded-full bg-wine-700 font-serif text-lg text-parchment-50"
         aria-hidden="true">SE</span
@@ -26,26 +30,30 @@ import NavLinks from './NavLinks.astro';
       </span>
     </a>
 
-    <nav aria-label="Navigazione principale">
-      <!-- Mobile: native disclosure -->
-      <details class="group sm:hidden">
-        <summary
-          class="cursor-pointer list-none rounded p-2 text-2xl leading-none text-ink-800 [&::-webkit-details-marker]:hidden"
-        >
-          <span aria-hidden="true">☰</span><span class="sr-only">Menu</span>
-        </summary>
+    <div class="flex items-center gap-2">
+      <nav aria-label={t.ui.mainNav}>
+        <!-- Mobile: native disclosure -->
+        <details class="group md:hidden">
+          <summary
+            class="cursor-pointer list-none rounded p-2 text-2xl leading-none text-ink-800 [&::-webkit-details-marker]:hidden"
+          >
+            <span aria-hidden="true">☰</span><span class="sr-only">{t.ui.menu}</span>
+          </summary>
 
-        <ul
-          class="absolute left-0 right-0 z-10 hidden flex-col gap-1 border-b border-parchment-200 bg-parchment-50 px-4 py-2 shadow-md group-open:flex"
-        >
+          <ul
+            class="absolute left-0 right-0 z-10 hidden flex-col gap-1 border-b border-parchment-200 bg-parchment-50 px-4 py-2 shadow-md group-open:flex"
+          >
+            <NavLinks />
+          </ul>
+        </details>
+
+        <!-- Desktop: always-visible bar -->
+        <ul class="hidden md:flex md:flex-row md:items-center md:gap-6">
           <NavLinks />
         </ul>
-      </details>
+      </nav>
 
-      <!-- Desktop: always-visible bar -->
-      <ul class="hidden sm:flex sm:flex-row sm:items-center sm:gap-6">
-        <NavLinks />
-      </ul>
-    </nav>
+      <LangSwitcher />
+    </div>
   </div>
 </header>

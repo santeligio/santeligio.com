@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../Hero.astro';
+import { SOCI } from '../../consts';
+import { localeFromUrl, useTranslations } from '../../i18n';
+
+const lang = localeFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Base title={t.storia.metaTitle} description={t.storia.metaDescription}>
+  <Hero
+    compact
+    image="/santeligio/20190818-convenzione-1858-pag1.jpg"
+    imageAlt={t.storia.heroAlt}
+    title={t.storia.heroTitle}
+  />
+
+  <nav
+    aria-label={t.storia.sectionsNav}
+    class="border-b border-parchment-200 bg-parchment-100"
+  >
+    <div class="mx-auto flex max-w-5xl gap-6 px-4 py-3 text-sm">
+      <a class="text-wine-700 hover:underline" href="#storia">
+        {t.storia.linkStoria}
+      </a>
+      <a class="text-wine-700 hover:underline" href="#soci">
+        {t.storia.linkSoci}
+      </a>
+    </div>
+  </nav>
+
+  <article class="prose-eligio mx-auto max-w-3xl px-4 py-12">
+    <div id="storia">
+      {t.storia.body.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+
+    <img
+      class="my-8 w-full rounded-lg"
+      src="/santeligio/2026-07-12-foto-gruppo-compagnia.jpg"
+      alt={t.storia.photoAlt}
+    />
+
+    <div id="soci">
+      <h2>{t.storia.sociTitle}</h2>
+      <p>{t.storia.sociUpdated}</p>
+      <ol>
+        {
+          SOCI.map((name, i) => (
+            <li>
+              {name}
+              {i === 0 && <> <b>{t.storia.priore}</b></>}
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </article>
+</Base>

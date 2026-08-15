@@ -4,6 +4,14 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import TranslationHint from '../components/TranslationHint.astro';
 import { SITE } from '../consts';
+import {
+  LOCALES,
+  DEFAULT_LOCALE,
+  dictionaries,
+  localeFromUrl,
+  localePath,
+  useTranslations,
+} from '../i18n';
 
 interface Props {
   title?: string;
@@ -12,19 +20,35 @@ interface Props {
   image?: string;
 }
 
+// The locale comes from the URL rather than a prop, so every page gets it right
+// without having to remember to pass it down.
+const lang = localeFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const {
   title,
-  description = SITE.description,
+  description = t.siteDescription,
   image = '/santeligio/2024-07-07-foto-gruppo-compagnia.jpg',
 } = Astro.props;
 
 const pageTitle = title ? `${title} — ${SITE.title}` : SITE.title;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
 const imageUrl = new URL(image, SITE.url).href;
+
+// hreflang alternates for every language this page exists in, plus x-default
+// pointing at the Italian original.
+const alternates = LOCALES.map((code) => ({
+  code,
+  href: new URL(localePath(Astro.url.pathname, code), SITE.url).href,
+}));
+const xDefault = new URL(
+  localePath(Astro.url.pathname, DEFAULT_LOCALE),
+  SITE.url,
+).href;
 ---
 
 <!doctype html>
-<html lang={SITE.lang}>
+<html lang={t.htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,12 +59,19 @@ const imageUrl = new URL(image, SITE.url).href;
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
 
+    {
+      alternates.map((alt) => (
+        <link rel="alternate" hreflang={dictionaries[alt.code].htmlLang} href={alt.href} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.title} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:locale" content="it_IT" />
+    <meta property="og:locale" content={t.ogLocale} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={imageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
@@ -60,7 +91,7 @@ const imageUrl = new URL(image, SITE.url).href;
       href="#contenuto"
       class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-parchment-50 focus:px-4 focus:py-2 focus:text-wine-700 focus:shadow-md"
     >
-      Salta al contenuto
+      {t.ui.skipToContent}
     </a>
     <TranslationHint />
     <Header />
