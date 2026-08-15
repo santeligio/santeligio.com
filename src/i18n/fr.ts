@@ -2,7 +2,7 @@ import type { it } from './it';
 
 // French copy, translated from the Italian source. Piedmontese and historical
 // terms are deliberately left in the original — Baja, Abbà, Cartunè, Priore,
-// ciuchinere, "La Mandulera" — and glossed on first use, because they name
+// ciuchinere, "La Mandoulera" — and glossed on first use, because they name
 // specific local things that have no French equivalent. Needs review by
 // someone who knows the tradition.
 export const fr: typeof it = {
@@ -121,7 +121,7 @@ export const fr: typeof it = {
     after: [
       "Nous voici arrivés au moment le plus important et le plus solennel de la manifestation. Sur le parvis de l'église, après la célébration de la messe, l'Abbà sortant et l'Abbà entrant se retrouvent face à face pour le passage de témoin.",
       "Ce qui passe entre les mains du nouveau Priore n'est pas un simple témoin, mais l'histoire même de Vernante. L'ancien Abbà remet officiellement au nouveau les hallebardes parées, symbole de l'autorité et de la conduite de la Compagnia, ainsi que le registre de la Compagnia, qui conserve les noms de tous ceux qui ont exercé cette charge au fil des ans. Par ce geste, le témoin de la tradition est officiellement transmis.",
-      "Aussitôt après ce passage, la solennité laissait autrefois place à la pure joie populaire. De la petite place appelée « La Mandulera » partait le traditionnel défilé des « cavaliers anciens » : une parade joyeuse et colorée qui serpentait dans les rues du village, rejouant cette ancienne « armée populaire » célébrant la victoire et la liberté retrouvée. Vive la Baja, vive la Compagnia di Sant'Eligio, et bon passage de témoin à tous !",
+      "Aussitôt après ce passage, la solennité laissait autrefois place à la pure joie populaire. De la petite place appelée « La Mandoulera » partait le traditionnel défilé des « cavaliers anciens » : une parade joyeuse et colorée qui serpentait dans les rues du village, rejouant cette ancienne « armée populaire » célébrant la victoire et la liberté retrouvée. Vive la Baja, vive la Compagnia di Sant'Eligio, et bon passage de témoin à tous !",
     ],
     closingBefore:
       "Le texte du passage de témoin est de Loretta Macario, que nous remercions. Pour en savoir plus sur l'histoire de la Compagnia et la liste des membres, voir la page ",
