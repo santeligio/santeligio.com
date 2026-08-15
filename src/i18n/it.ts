@@ -118,7 +118,8 @@ export const it = {
       "Nelle mani del nuovo Priore non passa solo un testimone, ma la storia stessa di Vernante. L'Abbà vecchio consegna ufficialmente al nuovo: le alabarde guarnite, simbolo dell'autorità e della guida della compagnia ed il registro della Compagnia, che custodisce i nomi di tutti coloro che hanno onorato questa carica negli anni. Con questo gesto, il testimone della tradizione è ufficialmente passato.",
       'Subito dopo questo passaggio, un tempo la solennità lasciava spazio alla pura gioia popolare. Dalla piazzetta "La Mandulera" prendeva il via la tradizionale sfilata dei "cavalieri antichi". Un\'allegra e colorata parata che si snodava per le vie del paese, simulando quell\'antico "esercito popolare" che festeggiava la vittoria e la libertà ritrovata. Viva la Baja, viva la Compagnia di Sant\'Eligio e buon passaggio delle consegne a tutti!',
     ],
-    closingBefore: 'Il testo del passaggio delle consegne è di Loretta Macario, che ringraziamo. Per approfondire la storia della Compagnia e l\'elenco dei Soci si veda la pagina ',
+    closingBefore:
+      "Il testo del passaggio delle consegne è di Loretta Macario, che ringraziamo. Per approfondire la storia della Compagnia e l'elenco dei Soci si veda la pagina ",
     closingLink: 'Storia',
     closingAfter: '.',
   },
@@ -159,10 +160,10 @@ export const it = {
     metaDescription: "Come contattare la Compagnia di Sant'Eligio di Vernante.",
     heroTitle: 'Contatti',
     intro:
-      'Per informazioni, richieste o segnalazioni potete scriverci all\'indirizzo:',
+      "Per informazioni, richieste o segnalazioni potete scriverci all'indirizzo:",
     privacyTitle: 'Privacy',
     privacyBody:
-      'Il materiale storico e archivistico pubblicato su questo sito è di natura documentaria. I nominativi dei Soci viventi sono pubblicati solo con il loro consenso. Per richieste relative ai propri dati, scrivete all\'indirizzo sopra indicato. Leggi l\'',
+      "Il materiale storico e archivistico pubblicato su questo sito è di natura documentaria. I nominativi dei Soci viventi sono pubblicati solo con il loro consenso. Per richieste relative ai propri dati, scrivete all'indirizzo sopra indicato. Leggi l'",
     privacyLink: 'informativa completa sulla privacy',
   },
 
@@ -186,7 +187,7 @@ export const it = {
       'Il materiale storico e archivistico pubblicato su questo sito (foto, registri, elenchi) è di natura documentaria. I nominativi dei Soci viventi sono pubblicati solo con il loro consenso.',
     rightsTitle: 'I tuoi diritti',
     rightsBody:
-      'Per richiedere la rimozione o la correzione di un dato che ti riguarda (ad esempio una foto o un nominativo), scrivi all\'indirizzo indicato sopra: risponderemo il prima possibile.',
+      "Per richiedere la rimozione o la correzione di un dato che ti riguarda (ad esempio una foto o un nominativo), scrivi all'indirizzo indicato sopra: risponderemo il prima possibile.",
     changesTitle: 'Modifiche a questa informativa',
     changesBody:
       'Questa pagina potrà essere aggiornata in futuro, ad esempio in caso di variazioni nei servizi utilizzati dal sito. La data di ultimo aggiornamento è indicata in cima alla pagina.',

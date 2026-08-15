@@ -116,7 +116,7 @@ export const en: typeof it = {
     ],
     after: [
       'And so we come to the most important and most solemn moment of the celebration. On the church forecourt, after Mass has been celebrated, the outgoing Abbà and the incoming Abbà stand face to face for the handover.',
-      "What passes into the hands of the new Priore is not merely a baton, but the history of Vernante itself. The old Abbà formally hands over to the new one the dressed halberds, symbol of the authority and leadership of the Compagnia, and the register of the Compagnia, which holds the names of all those who have held this office over the years. With this gesture, the tradition has officially been passed on.",
+      'What passes into the hands of the new Priore is not merely a baton, but the history of Vernante itself. The old Abbà formally hands over to the new one the dressed halberds, symbol of the authority and leadership of the Compagnia, and the register of the Compagnia, which holds the names of all those who have held this office over the years. With this gesture, the tradition has officially been passed on.',
       'Immediately after this handover, solemnity once gave way to sheer popular joy. From the little square known as "La Mandulera" the traditional parade of the "ancient horsemen" would set off: a cheerful, colourful procession winding through the streets of the village, re-enacting that old "people\'s army" celebrating victory and freedom regained. Long live the Baja, long live the Compagnia di Sant\'Eligio, and a good handover to all!',
     ],
     closingBefore:
@@ -203,7 +203,7 @@ export const en: typeof it = {
     heroAlt: 'Register of the Compagnia',
     empty: 'No news has been published yet.',
     italianOnly:
-      'The entries below are snapshots of the Compagnia\'s register and are published in Italian only: they consist almost entirely of members\' names.',
+      "The entries below are snapshots of the Compagnia's register and are published in Italian only: they consist almost entirely of members' names.",
     backToNews: '← All news',
   },
 

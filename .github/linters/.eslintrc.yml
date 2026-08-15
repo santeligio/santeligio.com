@@ -1,0 +1,20 @@
+---
+# Config for super-linter's TYPESCRIPT_ES / JAVASCRIPT_ES (eslint 8, eslintrc
+# format). The workflow points at this file explicitly via
+# TYPESCRIPT_ES_CONFIG_FILE so it cannot silently fall back to the default.
+env:
+  browser: true
+  es2022: true
+  node: true
+
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+
+rules:
+  # eslint-plugin-n resolves imports the way Node does, so it reports
+  # extensionless relative imports such as `./it` as missing. This project is
+  # built by Astro/Vite and type-checked by TypeScript, both of which resolve
+  # them; adding a .js extension that no file on disk has would satisfy the
+  # rule while making the imports less accurate, not more.
+  n/no-missing-import: off

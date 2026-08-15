@@ -33,6 +33,10 @@ jobs:
           # project at all, reporting errors in files a pull request never
           # touched. TYPESCRIPT_ES already covers linting.
           VALIDATE_TYPESCRIPT_STANDARD: false
+          # Named explicitly rather than relying on the default lookup: when a
+          # config is not found super-linter silently uses its own, which is
+          # how the Prettier config sat unread in .github/linters/ for a while.
+          TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.yml
           # - devcontainer.json intentionally uses JSONC (inline comments), which
           #   trips the strict JSON/JSON_PRETTIER linters.
           # - CLAUDE.md is a symlink to AGENTS.md, not distinct content; without
