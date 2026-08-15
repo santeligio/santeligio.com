@@ -33,7 +33,7 @@ const t = useTranslations(lang);
     <div class="flex items-center gap-2">
       <nav aria-label={t.ui.mainNav}>
         <!-- Mobile: native disclosure -->
-        <details class="group md:hidden">
+        <details class="group lg:hidden">
           <summary
             class="cursor-pointer list-none rounded p-2 text-2xl leading-none text-ink-800 [&::-webkit-details-marker]:hidden"
           >
@@ -48,7 +48,7 @@ const t = useTranslations(lang);
         </details>
 
         <!-- Desktop: always-visible bar -->
-        <ul class="hidden md:flex md:flex-row md:items-center md:gap-6">
+        <ul class="hidden lg:flex lg:flex-row lg:items-center lg:gap-6">
           <NavLinks />
         </ul>
       </nav>

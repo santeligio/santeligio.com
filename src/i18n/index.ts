@@ -1,9 +1,10 @@
 import { it } from './it';
 import { en } from './en';
+import { fr } from './fr';
 
 export const DEFAULT_LOCALE = 'it';
 
-export const dictionaries = { it, en };
+export const dictionaries = { it, en, fr };
 
 export type Locale = keyof typeof dictionaries;
 export type Dictionary = typeof it;
