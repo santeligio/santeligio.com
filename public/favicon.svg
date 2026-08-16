@@ -1,4 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <circle cx="32" cy="32" r="32" fill="#74232f"/>
-  <text x="32" y="41" font-family="Georgia, serif" font-size="24" fill="#f7f1e3" text-anchor="middle">SE</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="faviconTitle">
+  <title id="faviconTitle">Sant'Eligio</title>
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0b563" />
+      <stop offset="100%" stop-color="#a67d28" />
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="32" fill="#74232f" />
+  <circle cx="32" cy="30" r="20" fill="#c99a3d" />
+
+  <!-- mitre, bold and simplified for legibility at favicon sizes -->
+  <path
+    d="M 20 34
+       Q 21 15 30 8
+       Q 32 18 32 22
+       Q 32 18 34 8
+       Q 43 15 44 34
+       Z"
+    fill="url(#gold)"
+    stroke="#3f1119"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
+  <rect x="19" y="31" width="26" height="6" rx="2.5" fill="#a67d28" stroke="#3f1119" stroke-width="2" />
+
+  <!-- face and beard as a single simplified silhouette -->
+  <path
+    d="M 24 36
+       Q 23 44 26 50
+       Q 29 56 32 57
+       Q 35 56 38 50
+       Q 41 44 40 36
+       Q 36 40 32 40
+       Q 28 40 24 36
+       Z"
+    fill="#fdfbf6"
+    stroke="#3f1119"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
 </svg>
