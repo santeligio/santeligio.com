@@ -11,12 +11,15 @@
       <stop offset="45%" stop-color="#c99a3d" />
       <stop offset="100%" stop-color="#7a5a18" />
     </linearGradient>
-    <!-- pale sky-blue halo, as painted on the flag, rather than a gold disc -->
+    <!-- vivid warm yellow halo: sampled directly from the flag photo, which
+         reads a saturated lemon-gold, not the pale blue first assumed from a
+         lower-resolution look (the blue was simultaneous-contrast against the
+         warm parchment field, not the halo's own color) -->
     <radialGradient id="d-halo" cx="45%" cy="38%" r="65%">
-      <stop offset="0%" stop-color="#f3f8fb" />
-      <stop offset="55%" stop-color="#d9e8ee" />
-      <stop offset="85%" stop-color="#aecbd8" />
-      <stop offset="100%" stop-color="#8fb2c2" />
+      <stop offset="0%" stop-color="#fbf3c8" />
+      <stop offset="45%" stop-color="#f3e074" />
+      <stop offset="80%" stop-color="#e8c93c" />
+      <stop offset="100%" stop-color="#c9a52a" />
     </radialGradient>
     <linearGradient id="d-gold" x1="10%" y1="0%" x2="90%" y2="100%">
       <stop offset="0%" stop-color="#f0d590" />
@@ -65,16 +68,24 @@
       <rect x="150" y="18" width="32" height="164" fill="#74232f" />
     </g>
 
-    <!-- halo: pale blue, as painted, with a thin gold edge -->
+    <!-- halo: vivid gold, as actually painted, with a deeper gold edge -->
     <circle cx="100" cy="72" r="40" fill="url(#d-halo)" />
-    <circle cx="100" cy="72" r="40" fill="none" stroke="#c99a3d" stroke-width="1.4" opacity="0.7" />
+    <circle cx="100" cy="72" r="40" fill="none" stroke="#a67d28" stroke-width="1.4" opacity="0.75" />
 
-    <!-- crosier: a plain staff, held at the chest and running to the ground.
-         Kept below the shoulder line so its finial doesn't collide with the
-         ear, which is what made it read as a stray earring at first -->
-    <path d="M 128 176 L 124 124" stroke="#6b4f16" stroke-width="2.6" stroke-linecap="round" />
-    <circle cx="124.4" cy="121" r="2.4" fill="url(#d-gold)" stroke="#6b4f16" stroke-width="1" />
-    <path d="M 127.3 174 L 123.7 125" stroke="url(#d-gold)" stroke-width="1.2" stroke-linecap="round" opacity="0.8" />
+    <!-- crosier: the reference photo shows an ornate scrolled crook near
+         head height, not a plain rod. A relocated dot was the wrong fix for
+         the earlier "looks like an earring" problem — the real fix is
+         drawing a recognizable hooked volute, offset clear of the ear -->
+    <path d="M 128 176 L 132 100" stroke="#6b4f16" stroke-width="2.6" stroke-linecap="round" />
+    <path d="M 131.3 174 L 135.3 101" stroke="url(#d-gold)" stroke-width="1.2" stroke-linecap="round" opacity="0.8" />
+    <path
+      d="M 132 100 Q 132 85 145 83 Q 156 82 155 92 Q 154 100 145 99.5 Q 140 99 140.5 94.5 Q 141 91.5 144 91.8"
+      fill="none" stroke="url(#d-gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+    />
+    <path
+      d="M 132 100 Q 132 85 145 83 Q 156 82 155 92 Q 154 100 145 99.5 Q 140 99 140.5 94.5 Q 141 91.5 144 91.8"
+      fill="none" stroke="#6b4f16" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"
+    />
 
     <!-- cope: a plain gold cloak, opening at the chest onto the alb and stole -->
     <path
@@ -131,37 +142,46 @@
     <path d="M 106 30 Q 103 50 100 56" stroke="#7a5a18" stroke-width="1.1" fill="none" stroke-linecap="round" />
     <rect x="72" y="70" width="56" height="9" rx="3" fill="#a67d28" stroke="#3f1119" stroke-width="1.4" />
     <path d="M 72 74.5 L 128 74.5" stroke="#7a5a18" stroke-width="0.8" opacity="0.5" />
-
-    <!-- face: gaunt and solemn, no smile; the mouth in the painting is not
-         visible, hidden entirely under the moustache -->
+    <!-- small quatrefoil emblem on the front panel, faint in the source but present -->
     <path
-      d="M 84 79 C 82 93, 83 106, 88 115 Q 94 122 100 122 Q 106 122 112 115
-         C 117 106, 118 93, 116 79 Q 108 87 100 87 Q 92 87 84 79 Z"
+      d="M 100 48 Q 102.5 50.5 100 53 Q 97.5 50.5 100 48 M 100 48 Q 97.5 45.5 100 43 Q 102.5 45.5 100 48
+         M 97.5 50.5 Q 95 48 92.5 50.5 Q 95 53 97.5 50.5 M 102.5 50.5 Q 105 48 107.5 50.5 Q 105 53 102.5 50.5"
+      fill="none" stroke="#8a6a1e" stroke-width="1" opacity="0.6"
+    />
+
+    <!-- face: fuller and rounder than first drawn — the clearer reference
+         crop shows soft, fleshy cheeks, not a gaunt, hollow face -->
+    <path
+      d="M 83 80 C 81 95, 82 108, 88 117 Q 94 124 100 124 Q 106 124 112 117
+         C 118 108, 119 95, 117 80 Q 109 88 100 88 Q 91 88 83 80 Z"
       fill="url(#d-skin)" stroke="#5c4415" stroke-width="1.2"
     />
-    <!-- cheek hollows, away from the light -->
-    <path d="M 109 98 Q 117 103 114 112 Q 111 117 106 114 Q 112 107 109 98 Z" fill="#7a5a18" opacity="0.16" />
-    <path d="M 88 100 Q 84 106 87 112" stroke="#7a5a18" stroke-width="1" fill="none" opacity="0.18" />
+    <!-- soft cheek shading, following the roundness rather than hollowing it -->
+    <path d="M 110 100 Q 116 106 112 114" stroke="#c9a56a" stroke-width="1.4" fill="none" opacity="0.35" stroke-linecap="round" />
+    <path d="M 90 100 Q 84 106 88 114" stroke="#c9a56a" stroke-width="1.4" fill="none" opacity="0.35" stroke-linecap="round" />
 
-    <!-- thin, pale brows; not dark and not arched high -->
-    <path d="M 89 96.5 q 4.5 -2.5 9 -0.5" stroke="#8a7a55" stroke-width="1.2" fill="none" stroke-linecap="round" />
-    <path d="M 102 96 q 4.5 -2.5 9 -0.5" stroke="#8a7a55" stroke-width="1.2" fill="none" stroke-linecap="round" />
-    <!-- deep-set, solemn eyes -->
-    <path d="M 90 101.8 q 3 -1.2 6 0" stroke="#3b332b" stroke-width="1" fill="none" stroke-linecap="round" />
-    <circle cx="93.3" cy="102.3" r="0.9" fill="#3b332b" />
-    <path d="M 104 101.4 q 3 -1.2 6 0" stroke="#3b332b" stroke-width="1" fill="none" stroke-linecap="round" />
-    <circle cx="107.3" cy="101.9" r="0.9" fill="#3b332b" />
-    <!-- long, straight nose -->
-    <path d="M 99.3 99 Q 101.8 106 101 111 Q 100.3 113.5 98 112.6" stroke="#5c4415" stroke-width="1" fill="none" stroke-linecap="round" />
+    <!-- brows: medium brown-grey, angled down toward the nose, giving the
+         solemn, slightly furrowed look visible in the painting -->
+    <path d="M 98 95.5 q -5 1.5 -10 3" stroke="#7a6a48" stroke-width="1.4" fill="none" stroke-linecap="round" />
+    <path d="M 102 95.5 q 5 1.5 10 3" stroke="#7a6a48" stroke-width="1.4" fill="none" stroke-linecap="round" />
+    <!-- deep-set eyes -->
+    <path d="M 90 102.5 q 3 -1.2 6 0" stroke="#3b332b" stroke-width="1" fill="none" stroke-linecap="round" />
+    <circle cx="93.3" cy="103" r="0.9" fill="#3b332b" />
+    <path d="M 104 102.5 q 3 -1.2 6 0" stroke="#3b332b" stroke-width="1" fill="none" stroke-linecap="round" />
+    <circle cx="107.3" cy="103" r="0.9" fill="#3b332b" />
+    <!-- straight nose with a slight bulb at the tip -->
+    <path d="M 99.3 100 Q 101.8 107 101.4 111.5 Q 101.2 114 98 113" stroke="#5c4415" stroke-width="1" fill="none" stroke-linecap="round" />
+    <path d="M 96.5 113.5 Q 98.5 115.3 100.5 114.6" stroke="#8a6a3a" stroke-width="0.8" fill="none" opacity="0.5" />
 
-    <!-- beard: full and rounded at the base, moustache blending directly into
-         it with no gap and no mouth line -->
+    <!-- beard: full and rounded at the base; moustache blends into it but a
+         faint neutral mouth line is visible beneath, as in the painting -->
     <path
       d="M 85 110 C 83 121, 84 133, 91 142 Q 96 148 100 149 Q 104 148 109 142
          C 116 133, 117 121, 115 110 Q 108 116 100 116 Q 92 116 85 110 Z"
       fill="url(#d-beard)" stroke="#5c4415" stroke-width="1.2"
     />
     <path d="M 90 113 Q 100 117 110 113 Q 108 116.5 100 117.2 Q 92 116.5 90 113 Z" fill="url(#d-beard)" stroke="#5c4415" stroke-width="0.9" />
+    <path d="M 95 118.5 Q 100 120.3 105 118.5" stroke="#7a5a3a" stroke-width="0.9" fill="none" opacity="0.55" stroke-linecap="round" />
     <g stroke="#c9bfa0" stroke-width="0.6" opacity="0.55" fill="none">
       <path d="M 91 119 Q 89 129 93 138" />
       <path d="M 97 121 Q 96 133 98 143" />
