@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="logoTitleC">
+  <title id="logoTitleC">Sant'Eligio — bozza C, icona dipinta</title>
+  <defs>
+    <radialGradient id="c-glow" cx="50%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#fff6df" stop-opacity="0.9" />
+      <stop offset="60%" stop-color="#f7e7b0" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#f7e7b0" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="c-wine" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#9c3644" />
+      <stop offset="100%" stop-color="#5c1b26" />
+    </linearGradient>
+    <radialGradient id="c-halo" cx="46%" cy="38%" r="62%">
+      <stop offset="0%" stop-color="#fff3cf" />
+      <stop offset="50%" stop-color="#f0c96a" />
+      <stop offset="85%" stop-color="#c99a3d" />
+      <stop offset="100%" stop-color="#a67d28" />
+    </radialGradient>
+    <linearGradient id="c-gold" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#f3da9c" />
+      <stop offset="50%" stop-color="#dcae54" />
+      <stop offset="100%" stop-color="#a67d28" />
+    </linearGradient>
+    <linearGradient id="c-skin" x1="25%" y1="0%" x2="75%" y2="100%">
+      <stop offset="0%" stop-color="#f6e3c6" />
+      <stop offset="55%" stop-color="#eecfa2" />
+      <stop offset="100%" stop-color="#c99f6f" />
+    </linearGradient>
+    <radialGradient id="c-blush" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c96a5a" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#c96a5a" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="c-beard" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#eee7d6" />
+      <stop offset="100%" stop-color="#cfc4a3" />
+    </linearGradient>
+    <clipPath id="c-fieldClip">
+      <circle cx="100" cy="100" r="82" />
+    </clipPath>
+    <filter id="c-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="3.5" flood-color="#3f1119" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <g filter="url(#c-soft)">
+    <circle cx="100" cy="100" r="97" fill="#3f1119" />
+    <circle cx="100" cy="100" r="94" fill="url(#c-wine)" />
+    <circle cx="100" cy="100" r="83" fill="url(#c-gold)" />
+    <circle cx="100" cy="100" r="80.5" fill="#fdfaf1" />
+
+    <g clip-path="url(#c-fieldClip)" opacity="0.08">
+      <rect x="18" y="18" width="32" height="164" fill="#74232f" />
+      <rect x="150" y="18" width="32" height="164" fill="#74232f" />
+    </g>
+
+    <!-- warm aura behind the whole figure, like an icon's gold ground -->
+    <circle cx="100" cy="98" r="72" fill="url(#c-glow)" />
+
+    <!-- halo with fine radiating rays -->
+    <g clip-path="url(#c-fieldClip)" opacity="0.5" stroke="#f0c96a" stroke-width="1">
+      <path d="M 100 20 L 100 30" /><path d="M 132 30 L 126 37" /><path d="M 156 54 L 148 59" />
+      <path d="M 165 84 L 156 85" /><path d="M 44 30 L 50 37" /><path d="M 20 54 L 28 59" />
+      <path d="M 11 84 L 20 85" />
+    </g>
+    <circle cx="100" cy="72" r="40" fill="url(#c-halo)" />
+    <circle cx="100" cy="72" r="40" fill="none" stroke="#a67d28" stroke-width="1" opacity="0.4" />
+
+    <!-- infulae -->
+    <path d="M 83 90 Q 79 128 83 168" fill="none" stroke="url(#c-gold)" stroke-width="7" stroke-linecap="round" />
+    <path d="M 117 90 Q 121 128 117 168" fill="none" stroke="url(#c-gold)" stroke-width="7" stroke-linecap="round" />
+    <path d="M 83 96 Q 80 128 83 162" fill="none" stroke="#a67d28" stroke-width="1" opacity="0.5" />
+    <path d="M 117 96 Q 120 128 117 162" fill="none" stroke="#a67d28" stroke-width="1" opacity="0.5" />
+
+    <!-- crosier -->
+    <path d="M 129 173 L 120 97" stroke="#8a6a24" stroke-width="2.8" stroke-linecap="round" />
+    <path
+      d="M 120 97 Q 107 95 109 84 Q 111 76 122 78 Q 130 80 128 88 Q 126 95 120 97 Z"
+      fill="none" stroke="#8a6a24" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"
+    />
+    <path d="M 128.3 171 L 119.7 98" stroke="#f3da9c" stroke-width="1" stroke-linecap="round" opacity="0.7" />
+
+    <!-- cope, painterly folds via soft overlapping tones + small cross motifs -->
+    <path
+      d="M 87 135 Q 68 140 63 159 Q 61 169 68 174 L 132 174 Q 139 169 137 159 Q 132 140 113 135
+         Q 106 141 100 141 Q 94 141 87 135 Z"
+      fill="url(#c-gold)" stroke="#6b4f16" stroke-width="1.2" stroke-linejoin="round"
+    />
+    <g opacity="0.55">
+      <path d="M 67 172 Q 78 156 90 147" fill="none" stroke="#f3da9c" stroke-width="2.4" stroke-linecap="round" />
+      <path d="M 133 172 Q 122 156 110 147" fill="none" stroke="#f3da9c" stroke-width="2.4" stroke-linecap="round" />
+      <path d="M 63 159 Q 72 152 82 149" fill="none" stroke="#8a6a24" stroke-width="1.6" stroke-linecap="round" />
+      <path d="M 137 159 Q 128 152 118 149" fill="none" stroke="#8a6a24" stroke-width="1.6" stroke-linecap="round" />
+    </g>
+    <g stroke="#8a6a24" stroke-width="1" opacity="0.55" fill="none">
+      <path d="M 73 156 l 3 3 m 0 -3 l -3 3" />
+      <path d="M 82 165 l 3 3 m 0 -3 l -3 3" />
+      <path d="M 127 156 l 3 3 m 0 -3 l -3 3" />
+      <path d="M 118 165 l 3 3 m 0 -3 l -3 3" />
+    </g>
+    <path d="M 95 143 L 93 174 L 107 174 L 105 143 Q 100 146 95 143 Z" fill="#74232f" stroke="#5c1b26" stroke-width="1" />
+    <g stroke="#e0b563" stroke-width="0.8" opacity="0.7">
+      <path d="M 96 150 L 94.6 174" /><path d="M 104 150 L 105.4 174" />
+    </g>
+
+    <!-- hand raised in blessing: index + middle extended, ring + little finger
+         folded into the palm, thumb crossing in front -->
+    <path
+      d="M 72 167 Q 67 167 66 160 Q 65 153 70 149 Q 75 146 82 147 Q 88 149 89 156
+         Q 90 162 86 166 Q 81 169 72 167 Z"
+      fill="url(#c-skin)" stroke="#8a5a3a" stroke-width="1" stroke-linejoin="round"
+    />
+    <rect x="71" y="131" width="6.5" height="21" rx="3.2" fill="url(#c-skin)" stroke="#8a5a3a" stroke-width="1" />
+    <rect x="79.5" y="126" width="6.5" height="26" rx="3.2" fill="url(#c-skin)" stroke="#8a5a3a" stroke-width="1" />
+    <path
+      d="M 86 150 Q 93 148 94.5 154 Q 96 160 89.5 161 Q 85 161 84.5 157 Z"
+      fill="url(#c-skin)" stroke="#8a5a3a" stroke-width="0.9"
+    />
+    <path d="M 71 160 Q 77 163 83 160" stroke="#c99f6f" stroke-width="0.7" fill="none" opacity="0.6" />
+
+
+    <!-- mitre with three faceted gems -->
+    <path
+      d="M 76 74 Q 78 45 94 31 Q 97 50 100 56 Q 103 50 106 31 Q 122 45 124 74 Z"
+      fill="url(#c-gold)" stroke="#6b4f16" stroke-width="1.3" stroke-linejoin="round"
+    />
+    <path d="M 94 31 Q 97 50 100 56" stroke="#fbead0" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.8" />
+    <path d="M 106 31 Q 103 50 100 56" stroke="#fbead0" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.5" />
+    <rect x="73" y="70" width="54" height="9" rx="3" fill="url(#c-gold)" stroke="#6b4f16" stroke-width="1.3" />
+    <path d="M 90 74.5 l 4 -3.5 l 4 3.5 l -4 3.5 Z" fill="#8f2d3b" stroke="#5c1b26" stroke-width="0.5" />
+    <path d="M 96 74.5 l 4 -3.5 l 4 3.5 l -4 3.5 Z" fill="#e0b563" stroke="#6b4f16" stroke-width="0.5" />
+    <path d="M 102 74.5 l 4 -3.5 l 4 3.5 l -4 3.5 Z" fill="#8f2d3b" stroke="#5c1b26" stroke-width="0.5" />
+
+    <!-- ears -->
+    <path d="M 84 91 Q 80 93 81 98 Q 82 102 86 100" fill="url(#c-skin)" stroke="#8a5a3a" stroke-width="0.9" />
+    <path d="M 116 91 Q 120 93 119 98 Q 118 102 114 100" fill="url(#c-skin)" stroke="#8a5a3a" stroke-width="0.9" />
+
+    <!-- face: warm painted tone with blush and a fuller nose -->
+    <path
+      d="M 84 78 C 82 92, 83 104, 89 113 Q 94 119 100 119 Q 106 119 111 113
+         C 117 104, 118 92, 116 78 Q 108 86 100 86 Q 92 86 84 78 Z"
+      fill="url(#c-skin)" stroke="#5c4415" stroke-width="1.2"
+    />
+    <circle cx="90" cy="106" r="6" fill="url(#c-blush)" />
+    <circle cx="110" cy="106" r="6" fill="url(#c-blush)" />
+
+    <path d="M 88 97 q 4.5 -4 9 -0.3" stroke="#7a5a30" stroke-width="1.2" fill="none" stroke-linecap="round" />
+    <path d="M 103 96.7 q 4.5 -4 9 -0.3" stroke="#7a5a30" stroke-width="1.2" fill="none" stroke-linecap="round" />
+    <path d="M 90 101.6 q 3 -1.7 6 0 q -3 2.3 -6 0 Z" fill="#fdfaf1" stroke="#5c4415" stroke-width="0.7" />
+    <circle cx="93.3" cy="101.7" r="1.2" fill="#5c3a20" />
+    <circle cx="93.8" cy="101.2" r="0.4" fill="#ffffff" />
+    <path d="M 104 101.1 q 3 -1.7 6 0 q -3 2.3 -6 0 Z" fill="#fdfaf1" stroke="#5c4415" stroke-width="0.7" />
+    <circle cx="107.3" cy="101.2" r="1.2" fill="#5c3a20" />
+    <circle cx="107.8" cy="100.7" r="0.4" fill="#ffffff" />
+    <path d="M 100 100.5 Q 102.6 106.5 101.6 110.5 Q 100.5 112.5 98.4 111.4" stroke="#8a5a3a" stroke-width="1" fill="none" stroke-linecap="round" />
+    <path d="M 96 114.2 q 4 2 8 0" stroke="#a4584c" stroke-width="1.1" fill="none" stroke-linecap="round" />
+
+    <!-- beard with combed strand texture -->
+    <path
+      d="M 85 111 C 83 122, 84 134, 91 143 Q 96 149 100 151 Q 104 149 109 143
+         C 116 134, 117 122, 115 111 Q 108 117 100 117 Q 92 117 85 111 Z"
+      fill="url(#c-beard)" stroke="#5c4415" stroke-width="1.2"
+    />
+    <g stroke="#c9bda0" stroke-width="0.6" opacity="0.6" fill="none">
+      <path d="M 91 120 Q 89 131 93 140" />
+      <path d="M 96.5 122 Q 95 135 97.5 145" />
+      <path d="M 103.5 122 Q 105 135 102.5 145" />
+      <path d="M 109 120 Q 111 131 107 140" />
+    </g>
+    <path d="M 91 112 Q 100 116 109 112 Q 107 116.5 100 117.5 Q 93 116.5 91 112 Z" fill="url(#c-beard)" stroke="#5c4415" stroke-width="0.9" />
+  </g>
+</svg>
