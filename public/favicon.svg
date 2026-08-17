@@ -1,4 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <circle cx="32" cy="32" r="32" fill="#74232f"/>
-  <text x="32" y="41" font-family="Georgia, serif" font-size="24" fill="#f7f1e3" text-anchor="middle">SE</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="faviconTitle">
+  <title id="faviconTitle">Sant'Eligio</title>
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0d590" />
+      <stop offset="100%" stop-color="#96711f" />
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="32" fill="#74232f" />
+  <!-- vivid warm-gold halo, matching the color sampled from the flag photo -->
+  <circle cx="32" cy="30" r="20" fill="#e8c93c" />
+
+  <!-- mitre, bold and simplified for legibility at favicon sizes -->
+  <path
+    d="M 20 34
+       Q 21 15 30 8
+       Q 32 18 32 22
+       Q 32 18 34 8
+       Q 43 15 44 34
+       Z"
+    fill="url(#gold)"
+    stroke="#3f1119"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
+  <rect x="19" y="31" width="26" height="6" rx="2.5" fill="#96711f" stroke="#3f1119" stroke-width="2" />
+
+  <!-- face and beard as a single simplified silhouette, a touch fuller/rounder
+       to match the redrawn logo rather than the original gaunt outline -->
+  <path
+    d="M 23 36
+       Q 22 45 26 51
+       Q 29 57 32 58
+       Q 35 57 38 51
+       Q 42 45 41 36
+       Q 36 40 32 40
+       Q 28 40 23 36
+       Z"
+    fill="#fdfbf6"
+    stroke="#3f1119"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
 </svg>
